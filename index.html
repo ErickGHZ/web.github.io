@@ -4,6 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erick Gutierrez - Programador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            animation: fadeIn 2s;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: slideIn 1s;
+        }
+        section {
+            background: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        p, ul {
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e2e2e2;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,20 +100,20 @@
         <section>
             <h2>Proyectos destacados</h2>
             <ul>
-                <li>Proyecto 1</li>
-                <li>Proyecto 2</li>
-                <li>Proyecto 3</li>
+                <li>GHEU. Herramienta para la creación de horarios escolares automáticamente: Aplicación que genera horarios escolares de forma automática, optimizando los recursos disponibles.</li>
+                <li>HeroesWork. Herramienta para conectar gente con discapacidad y empresas que les ofrecen trabajo: Plataforma que facilita la conexión entre personas con discapacidad y empresas que buscan ser inclusivas en sus contrataciones.</li>
+                <li>GPDMV. Promocionador y creador de ofertas: Sistema que ayuda a negocios a crear y gestionar ofertas promocionales para atraer más clientes.</li>
             </ul>
         </section>
 
         <section>
             <h2>Contacto</h2>
-            <p>Puedes contactarme a través de mi correo electrónico: erick@example.com</p>
+            <p>Puedes contactarme a través de mi correo electrónico: gutierrezerick552@gmail.com</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2022 Erick Gutierrez Hernandez</p>
+        <p>&copy; 2024 Erick Gutierrez Hernandez</p>
     </footer>
 </body>
 </html>
