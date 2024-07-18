@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent;
+    width: 100vw; /* Add this line to make the div cover the entire screen width */
+}
+.container-body {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    height: 85vh;
+    background-color: green;
+    width: 100vw; /* Add this line to make the div cover the entire screen width */
+}
+.container-body-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-color: pink;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
+}
+
+.responsive-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ajusta la imagen para que cubra el contenedor sin distorsión */
+}
+
+.container-body-texto {
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+    align-items: center;
+    height: 85vh;
+    background-color:  orange;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
+}
+
+.container-body-texto-nombre {
+    display: flex;
+    justify-self: center;
+    align-items: end;
+    height: 30vh;
+    background-color:  purple;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
+}
+
+.container-body-texto-nombre h1 {
+    width: 100vw;
+    font-size: 3vw;
+    font-size: 6vh;
+    color: white;
+    text-align: left;
+    margin: 0;
+    padding: 0;  
+}
+
+.container-body-texto-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    background-color:  brown;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
+}
+
+.container-body-texto-titulo h2 {
+    width: 100vw;
+    font-size: 2.5vw;
+    font-size: 5vh;
+    color: white;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.container-body-texto-descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 50vh;
+    background-color:  grey;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
+}
+
+.container-body-texto-descripcion h3 {
+    width: 100vw;
+    font-size: 1.5vw;
+    font-size: 3vh;
+    color: white;
+    text-align: left;
+    margin: 0;
+    padding: 0;  
+}
+
+.container-footer {
+    display: flex;
+    justify-self: start;
+    align-items: center;
+    height: 10vh;
+    background-color: yellow;
+    width: 100vw; /* Add this line to make the div cover the entire screen width */
+}
+
+@media (max-width: 600px) {
+    .container-body {
+        flex-direction: column; /* Cambia la dirección del flex a columna */
+    }
+
+    .container-body-imagen {
+        width: 100vw; /* Cada contenedor cubre todo el ancho de la pantalla */
+        height: 42.5vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
+    }
+    .container-body-texto {
+        width: 100vw; /* Cada contenedor cubre todo el ancho de la pantalla */
+        height: 42.5vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
+    }
+    .container-body-texto-nombre {
+        height: 15vh;
+        justify-self: center;
+        align-items: center;
+        width: 100vw; /* Add this line to make the div cover the entire screen width */
+    }
+    .container-body-texto-titulo {
+        height: 12.5vh;
+        width: 100vw; /* Add this line to make the div cover the entire screen width */
+        align-items: center;
+    }
+    .container-body-texto-descripcion {
+        height: 15vh;
+        width: 100vw;
+        align-items: center; /* Add this line to make the div cover the entire screen width */
+    }
+    .container-body-texto-nombre h1 {
+        text-align: center;
+        font-size: 2.5vw;
+        font-size: 5vh;
+    }
+    .container-body-texto-titulo h2 {
+        text-align: center;
+        font-size: 2vw;
+        font-size: 4vh;
+    }
+    .container-body-texto-descripcion h3 {
+        text-align: center;
+        font-size: 1vw;
+        font-size: 2vh;
+    }
+
+}

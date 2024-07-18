@@ -1,0 +1,108 @@
+.container-head {
+    display: flex;
+    justify-self: start;
+    align-items: center;
+    height: 15vh;
+    background-color: transparent;
+    width: 100vw; /* Add this line to make the div cover the entire screen width */
+}
+.container-head-left {
+    width: 25vw;
+    font-size: 1.5vw;
+    font-size: 4vh;
+    color: red;
+    text-align: left;
+    margin: 0;
+    padding: 5vw;
+}
+.container-head-right {
+    width: 25vw;
+    font-size: 1.5vw;
+    font-size: 4vh;
+    color: red;
+    text-align: right;
+    margin: 0;
+    padding: 5vw;
+}
+.container-head-middle {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    background-color: transparent;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+.container-head-middle-right {
+    width: 50vw;
+    font-size: 1.5vw;
+    font-size: 4vh;
+    color: red;
+    text-align: right;
+    background-color: transparent;
+    margin: 0;
+    padding: 4vw;
+}
+.container-head-middle-left {
+    width: 50vw;
+    font-size: 1.5vw;
+    font-size: 4vh;
+    color: red;
+    background-color: transparent;
+    text-align: left;
+    margin: 0;
+    padding: 4vw;
+}
+.container-head-middle-select {
+    display: none;
+    border: none; /* Quitar el borde */
+    background-color: transparent; /* Hacer el fondo transparente */
+    color: red; /* Color del texto */
+    font-size: 1.5vw;
+    font-size: 2.5vh; /* Tamaño del texto */
+    text-align: center; /* Alinear el texto al centro */
+}
+/* Ocultar el borde y las flechas predeterminadas */
+.container-head-middle-select::-ms-expand {
+    display: none; /* Ocultar el botón desplegable en IE */
+}
+
+@media (max-width: 600px) {
+    .container-head-left {
+        font-size: 1.5vw;
+        font-size: 2.5vh;
+        padding: 3vw;
+    }
+    .container-head-right {
+        font-size: 1.5vw;
+        font-size: 2.5vh;
+        padding: 3vw;
+    }
+    .container-head-middle{
+        display: none;
+    }
+    .container-head-middle-select {
+        display: flex; /* Mostrar el select en pantallas pequeñas */
+        flex-direction: row; /* Alinear los elementos en columna */
+        width: 50vw;
+        margin: 0 auto; /* Centrar el select */
+        -webkit-appearance: none; /* Eliminar la apariencia por defecto en Safari y Chrome */
+        -moz-appearance: none; /* Eliminar la apariencia por defecto en Firefox */
+        appearance: none; /* Eliminar la apariencia por defecto en otros navegadores */
+        padding: 10px; /* Añadir padding para un mejor aspecto */
+    }
+    .container-head-middle-select option {
+        background-color: transparent; /* Fondo transparente */
+        border: none; /* Quitar el borde */
+        color: red; /* Color del texto */
+        font-size: 2.5vh; /* Tamaño del texto */
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Añadir padding */
+        margin: 0; /* Quitar margen */
+    }
+    .container-head-middle-select option:hover {
+        background-color: green; /* Cambiar el color de fondo al pasar el ratón */
+        border: none;
+    }
+
+}

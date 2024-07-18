@@ -3,117 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erick Gutierrez - Programador</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            animation: fadeIn 2s;
-        }
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            animation: slideIn 1s;
-        }
-        section {
-            background: white;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        section:hover {
-            transform: scale(1.02);
-        }
-        h2 {
-            color: #4CAF50;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-        p, ul {
-            line-height: 1.6;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            background: #e2e2e2;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-    </style>
+    <title>Erick Gutierrez</title>
+    <link rel="stylesheet" href="stylesHead.css">
+    <link rel="stylesheet" href="stylesBody.css">
 </head>
 <body>
-    <header>
-        <h1>Erick Gutierrez - Programador</h1>
-    </header>
+    <div class="container">
+        <div class="container-head">
+            <a class="container-head-left" href="#inicio">Inicio</a>
+            <div class="container-head-middle">
+                <a class="container-head-middle-right" href="#sobre-mi">Sobre mí</a>
+                <a class="container-head-middle-left" href="#proyectos">Proyectos</a>
+            </div>
+            <select id="menu" onchange="location = this.value;" class="container-head-middle-select" onmouseover="openSelectMenu()" onmouseout="closeSelectMenu()">
+                <option value="#sobre-mi">Sobre mí</option>
+                <option value="#proyectos">Proyectos</option>
+            </select>
+            <a class="container-head-right" href="#contacto">Contacto</a>
+        </div>
 
-    <main>
-        <section>
-            <h2>Sobre mí</h2>
-            <p>Hola, soy Erick Gutierrez Hernandez, un apasionado programador con experiencia en varios lenguajes de programación.</p>
-        </section>
+        <div class="container-body">
+            <div class="container-body-imagen">
+                <img src="/perfil.png" alt="Erick Gutierrez" class="responsive-img">
+            </div>
+            <div class="container-body-texto">
+                <div class="container-body-texto-nombre">
+                    <h1>Erick Gutierrez Hernandez</h1>
+                </div>
+                <div class="container-body-texto-titulo"> 
+                    <h2>Ingeniero en Desarrollo de Software</h2>
+                </div>
+                <div class="container-body-texto-descripcion">            
+                    <h3>Soy un estudiante apasionado por el desarrollo de software, con experiencia en varios proyectos. <br> Me dedico a la creación de sistemas y estoy emocionado por seguir aprendiendo y explorando diferentes áreas del desarrollo.</h3>
+                </div>
+            </div>
+        </div>
+    </div>    
 
-        <section>
-            <h2>Habilidades</h2>
-            <ul>
-                <li>Lenguajes de programación: HTML, CSS, JavaScript, Python</li>
-                <li>Frameworks: React, Angular, Django</li>
-                <li>Bases de datos: MySQL, MongoDB</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Proyectos destacados</h2>
-            <ul>
-                <li>GHEU. Herramienta para la creación de horarios escolares automáticamente: Aplicación que genera horarios escolares de forma automática, optimizando los recursos disponibles.</li>
-                <li>HeroesWork. Herramienta para conectar gente con discapacidad y empresas que les ofrecen trabajo: Plataforma que facilita la conexión entre personas con discapacidad y empresas que buscan ser inclusivas en sus contrataciones.</li>
-                <li>GPDMV. Promocionador y creador de ofertas: Sistema que ayuda a negocios a crear y gestionar ofertas promocionales para atraer más clientes.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Contacto</h2>
-            <p>Puedes contactarme a través de mi correo electrónico: gutierrezerick552@gmail.com</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Erick Gutierrez Hernandez</p>
-    </footer>
+<script>
+    function openSelectMenu() {
+        const selectMenu = document.getElementById('menu');
+        selectMenu.size = selectMenu.options.length;
+    }
+    function closeSelectMenu() {
+        const selectMenu = document.getElementById('menu');
+        selectMenu.size = 1;
+    }
+</script>
 </body>
 </html>
