@@ -1,73 +1,165 @@
+/* Estilos generales para el contenedor del encabezado */
 .container-head {
     display: flex;
     justify-self: start;
     align-items: center;
     height: 15vh;
     background-color: transparent;
-    width: 100vw; /* Add this line to make the div cover the entire screen width */
+    width: 100vw; /* Hacer que el div cubra el ancho completo de la pantalla */
+    
 }
+.container-head  a{
+    text-decoration: none;
+    
+}
+
+/* Estilo para la parte izquierda del encabezado */
 .container-head-left {
     width: 25vw;
     font-size: 1.5vw;
-    font-size: 4vh;
-    color: red;
+    font-size: 3vh;
+    
+    color: #00ff00;
     text-align: left;
     margin: 0;
     padding: 5vw;
 }
-.container-head-right {
+
+.container-head-left-inicio {
     width: 25vw;
-    font-size: 1.5vw;
+    font-size: 2vw;
     font-size: 4vh;
-    color: red;
-    text-align: right;
+    font-weight: bold;
+    color: #00ff00;
+    text-align: left;
     margin: 0;
     padding: 5vw;
 }
+.container-head-right{
+    width: 25vw;
+    text-align: left;
+    margin: 0;
+    padding: 5vw;
+}
+
+
+/* Estilo para la parte derecha del encabezado */
+.container-head-right a {
+    display: inline-block; /* Permite aplicar padding y otras propiedades de botón */
+    background-color: #00ff00; /* Color de fondo del botón */
+    color: #002000; /* Color del texto del botón */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    padding: 1vh 2vw; /* Espaciado interno del botón */
+    border-radius: .5vw; /* Bordes redondeados del botón */
+    font-size: 2vw; /* Ajusta el tamaño de la fuente del botón */
+    font-weight: bold;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transición suave */
+}
+
+.container-head-right a:hover {
+    transform: scale(1.1); /* Agranda ligeramente el botón al pasar el ratón */
+}
+
+
+
+
+
+/* Estilo para la parte central del encabezado */
 .container-head-middle {
     display: flex;
     flex-direction: row;
     width: 50vw;
     background-color: transparent;
-    color: red;
+    color: #00ff00;
     margin: 0;
     padding: 0;
 }
+
+/* Estilo para la parte derecha de la parte central del encabezado */
 .container-head-middle-right {
     width: 50vw;
     font-size: 1.5vw;
-    font-size: 4vh;
-    color: red;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #00ff00;
     text-align: right;
     background-color: transparent;
     margin: 0;
-    padding: 4vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    padding-right: 1.5vw;
 }
+
+/* Estilo para la parte izquierda de la parte central del encabezado */
 .container-head-middle-left {
     width: 50vw;
     font-size: 1.5vw;
-    font-size: 4vh;
-    color: red;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #00ff00;
     background-color: transparent;
     text-align: left;
-    margin: 0;
-    padding: 4vw;
-}
-.container-head-middle-select {
-    display: none;
-    border: none; /* Quitar el borde */
-    background-color: transparent; /* Hacer el fondo transparente */
-    color: red; /* Color del texto */
-    font-size: 1.5vw;
-    font-size: 2.5vh; /* Tamaño del texto */
-    text-align: center; /* Alinear el texto al centro */
-}
-/* Ocultar el borde y las flechas predeterminadas */
-.container-head-middle-select::-ms-expand {
-    display: none; /* Ocultar el botón desplegable en IE */
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    padding-left: 1.5vw;
+
 }
 
-@media (max-width: 600px) {
+/* Estilos para el select simulado */
+.custom-select {
+    display: none;
+
+}
+
+.select-selected {
+    background-color: transparent;
+    color: #00ff00;
+    border: 1px solid transparent;
+    padding: 10px;
+    font-size: 2.5vh;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.select-items {
+    position: absolute;
+    background-color: transparent;
+    color: #00ff00;
+    border: 1px solid transparent;
+    text-align: center;
+    font-size: 2.5vh;
+    font-weight: bold;
+    width: 100%;
+    display: none;
+    z-index: 99;
+}
+
+.select-items .select-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.select-items .select-option:hover {
+    background-color: #008000;
+    opacity: 0.7;
+}
+
+/* Ocultar los elementos del select cuando no están activos */
+.select-hide {
+    display: none;
+}
+
+/* Mostrar el dropdown cuando se pase el ratón sobre el select */
+.custom-select:hover .select-items {
+    display: block;
+}
+
+@media (max-width: 840px) {
+    .container-head {
+        height: 10vh;
+
+    }
     .container-head-left {
         font-size: 1.5vw;
         font-size: 2.5vh;
@@ -78,31 +170,12 @@
         font-size: 2.5vh;
         padding: 3vw;
     }
-    .container-head-middle{
+    .container-head-middle {
         display: none;
     }
-    .container-head-middle-select {
-        display: flex; /* Mostrar el select en pantallas pequeñas */
-        flex-direction: row; /* Alinear los elementos en columna */
-        width: 50vw;
-        margin: 0 auto; /* Centrar el select */
-        -webkit-appearance: none; /* Eliminar la apariencia por defecto en Safari y Chrome */
-        -moz-appearance: none; /* Eliminar la apariencia por defecto en Firefox */
-        appearance: none; /* Eliminar la apariencia por defecto en otros navegadores */
-        padding: 10px; /* Añadir padding para un mejor aspecto */
+    .custom-select {
+        position: relative;
+        display: inline-block;
+        width: 50vw; /* Ajustar el ancho según sea necesario */
     }
-    .container-head-middle-select option {
-        background-color: transparent; /* Fondo transparente */
-        border: none; /* Quitar el borde */
-        color: red; /* Color del texto */
-        font-size: 2.5vh; /* Tamaño del texto */
-        text-align: center; /* Centrar el texto */
-        padding: 10px; /* Añadir padding */
-        margin: 0; /* Quitar margen */
-    }
-    .container-head-middle-select option:hover {
-        background-color: green; /* Cambiar el color de fondo al pasar el ratón */
-        border: none;
-    }
-
 }

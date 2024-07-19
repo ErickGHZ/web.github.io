@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: transparent;
+    background-color: #002000;
     width: 100vw; /* Add this line to make the div cover the entire screen width */
 }
 .container-body {
@@ -18,7 +18,7 @@ body {
     justify-self: center;
     align-items: center;
     height: 85vh;
-    background-color: green;
+    background-color: transparent;
     width: 100vw; /* Add this line to make the div cover the entire screen width */
 }
 .container-body-imagen {
@@ -26,7 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 85vh;
-    background-color: pink;
+    background-color: transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
 
@@ -42,7 +42,7 @@ body {
     justify-self: start;
     align-items: center;
     height: 85vh;
-    background-color:  orange;
+    background-color:  transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
 
@@ -50,8 +50,8 @@ body {
     display: flex;
     justify-self: center;
     align-items: end;
-    height: 30vh;
-    background-color:  purple;
+    height: 37.5vh;
+    background-color:  transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
 
@@ -59,18 +59,18 @@ body {
     width: 100vw;
     font-size: 3vw;
     font-size: 6vh;
-    color: white;
+    color: #FBFBFB;
     text-align: left;
     margin: 0;
-    padding: 0;  
+    padding: 1vw;  
 }
 
 .container-body-texto-titulo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
-    background-color:  brown;
+    height: 25vh;
+    background-color:  transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
 
@@ -78,29 +78,29 @@ body {
     width: 100vw;
     font-size: 2.5vw;
     font-size: 5vh;
-    color: white;
+    color: #F3F4F3;
     text-align: left;
     margin: 0;
-    padding: 0;
+    padding: 1vw;
 }
 
 .container-body-texto-descripcion {
     display: flex;
     justify-content: center;
     align-items: top;
-    height: 50vh;
-    background-color:  grey;
+    height: 37.5vh;
+    background-color:  transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
 
 .container-body-texto-descripcion h3 {
     width: 100vw;
-    font-size: 1.5vw;
-    font-size: 3vh;
-    color: white;
+    font-size: 1.25vw;
+    font-size: 2.5vh;
+    color: #E3E6E3;
     text-align: left;
     margin: 0;
-    padding: 0;  
+    padding: 1vw;  
 }
 
 .container-footer {
@@ -112,18 +112,19 @@ body {
     width: 100vw; /* Add this line to make the div cover the entire screen width */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 840px) {
     .container-body {
-        flex-direction: column; /* Cambia la dirección del flex a columna */
+        flex-direction: column;
+        height: 90vh; /* Cambia la dirección del flex a columna */
     }
 
     .container-body-imagen {
         width: 100vw; /* Cada contenedor cubre todo el ancho de la pantalla */
-        height: 42.5vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
+        height: 45vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
     }
     .container-body-texto {
         width: 100vw; /* Cada contenedor cubre todo el ancho de la pantalla */
-        height: 42.5vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
+        height: 45h; /* Cada contenedor cubre la mitad de la altura de la pantalla */
     }
     .container-body-texto-nombre {
         height: 15vh;
@@ -137,7 +138,7 @@ body {
         align-items: center;
     }
     .container-body-texto-descripcion {
-        height: 15vh;
+        height: 17.5vh;
         width: 100vw;
         align-items: center; /* Add this line to make the div cover the entire screen width */
     }
