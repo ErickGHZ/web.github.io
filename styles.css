@@ -392,7 +392,65 @@ body {
   
         padding-right: 0vw;
     }
+    
+}
 
+
+.container-body-estudios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-color: #002000;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
+}	
+
+
+.container-body-estudios-educacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color:  transparent;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
     
-    
+}
+.container-body-estudios-educacion-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 37.5vh;
+    background-color: #00ff00;
+    width: 40vw; /* Add this line to make the div cover the entire screen width */
+    border-radius: 10px;
+}
+.container-body-estudios-certificaciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color:  #002000;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
+} 
+.container-body-estudios-certificaciones-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 37.5vh;
+    background-color: #00ff00;
+    width: 40vw; /* Add this line to make the div cover the entire screen width */
+    border-radius: 10px;
+}
+
+.container-body-tecnologias {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-color: #002000;
+    width: 50vw; /* Add this line to make the div cover the entire screen width */
 }

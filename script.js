@@ -22,24 +22,21 @@ const content = {
         </div>
     `,
     "sobre-mi": `
-        <div class="container-body-imagen">
-            <video autoplay loop muted playsinline class="responsive-img">
-                <source src="perfil.webm" type="video/webm" />
-            </video>
+        <div class="container-body-estudios">
+            <div class="container-body-estudios-educacion">
+                <div class="container-body-estudios-educacion-contenido">
+
+                </div>
+            </div>
+
+            <div class="container-body-estudios-certificaciones">
+                <div class="container-body-estudios-certificaciones-contenido">
+
+                </div>
+            </div>
         </div>
-        <div class="container-body-texto">
-            <div class="container-body-texto-nombre">
-                <h1>Erick Gutierrez Hernandez</h1>
-            </div>
-            <div class="container-body-texto-titulo"> 
-                <h2>Ingeniero en Desarrollo de Software</h2>
-            </div>
-            <div class="container-body-texto-descripcion">            
-                <h3>Soy un estudiante apasionado por el desarrollo de software, con experiencia en varios proyectos. <br> Me dedico a la creación de sistemas y estoy emocionado por seguir aprendiendo y explorando diferentes áreas del desarrollo.</h3>
-            </div>
-            <div class="container-body-texto-cv">
-                <a href="cv.pdf" download="cv.pdf">Descargar CV</a>
-            </div>
+        <div class="container-body-tecnologias">
+
         </div>
     `,
     "proyectos": `
