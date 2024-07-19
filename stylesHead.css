@@ -168,7 +168,14 @@
     .container-head-right {
         font-size: 1.5vw;
         font-size: 2.5vh;
-        padding: 3vw;
+        
+        text-align: right;
+    }
+    .container-head-right a {
+
+        font-size: 1vw;
+        font-size: 2vh; 
+        
     }
     .container-head-middle {
         display: none;
@@ -178,4 +185,12 @@
         display: inline-block;
         width: 50vw; /* Ajustar el ancho según sea necesario */
     }
+    .container-head-left-inicio {
+        font-size: 2vw;
+        font-size: 4vh;
+ 
+    }
+
+    
+    
 }

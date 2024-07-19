@@ -68,8 +68,8 @@ body {
 .container-body-texto-titulo {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 25vh;
+    align-items: start;
+    height: 17.5vh;
     background-color:  transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
@@ -82,13 +82,14 @@ body {
     text-align: left;
     margin: 0;
     padding: 1vw;
+    padding-right: 6vw;
 }
 
 .container-body-texto-descripcion {
     display: flex;
     justify-content: center;
     align-items: top;
-    height: 37.5vh;
+    height: 45vh;
     background-color:  transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
@@ -124,7 +125,7 @@ body {
     }
     .container-body-texto {
         width: 100vw; /* Cada contenedor cubre todo el ancho de la pantalla */
-        height: 45h; /* Cada contenedor cubre la mitad de la altura de la pantalla */
+        height: 45vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
     }
     .container-body-texto-nombre {
         height: 15vh;
