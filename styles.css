@@ -160,3 +160,199 @@ body {
     }
 
 }
+/* Estilos generales para el contenedor del encabezado */
+.container-head {
+    display: flex;
+    justify-self: start;
+    align-items: center;
+    height: 15vh;
+    background-color: transparent;
+    width: 100vw; /* Hacer que el div cubra el ancho completo de la pantalla */
+    
+}
+.container-head  a{
+    text-decoration: none;
+    
+}
+
+/* Estilo para la parte izquierda del encabezado */
+.container-head-left {
+    width: 25vw;
+    font-size: 1.5vw;
+    font-size: 3vh;
+    
+    color: #00ff00;
+    text-align: left;
+    margin: 0;
+    padding: 5vw;
+}
+
+.container-head-left-inicio {
+    width: 25vw;
+    font-size: 2vw;
+    font-size: 4vh;
+    font-weight: bold;
+    color: #00ff00;
+    text-align: left;
+    margin: 0;
+    padding: 5vw;
+}
+.container-head-right{
+    width: 25vw;
+    text-align: left;
+    margin: 0;
+    padding: 5vw;
+}
+
+
+/* Estilo para la parte derecha del encabezado */
+.container-head-right a {
+    display: inline-block; /* Permite aplicar padding y otras propiedades de botón */
+    background-color: #00ff00; /* Color de fondo del botón */
+    color: #002000; /* Color del texto del botón */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    padding: 1vh 2vw; /* Espaciado interno del botón */
+    border-radius: .5vw; /* Bordes redondeados del botón */
+    font-size: 2vw; /* Ajusta el tamaño de la fuente del botón */
+    font-weight: bold;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transición suave */
+}
+
+.container-head-right a:hover {
+    transform: scale(1.1); /* Agranda ligeramente el botón al pasar el ratón */
+}
+
+
+
+
+
+/* Estilo para la parte central del encabezado */
+.container-head-middle {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    background-color: transparent;
+    color: #00ff00;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para la parte derecha de la parte central del encabezado */
+.container-head-middle-right {
+    width: 50vw;
+    font-size: 1.5vw;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #00ff00;
+    text-align: right;
+    background-color: transparent;
+    margin: 0;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    padding-right: 1.5vw;
+}
+
+/* Estilo para la parte izquierda de la parte central del encabezado */
+.container-head-middle-left {
+    width: 50vw;
+    font-size: 1.5vw;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #00ff00;
+    background-color: transparent;
+    text-align: left;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    padding-left: 1.5vw;
+
+}
+
+/* Estilos para el select simulado */
+.custom-select {
+    display: none;
+
+}
+
+.select-selected {
+    background-color: transparent;
+    color: #00ff00;
+    border: 1px solid transparent;
+    padding: 10px;
+    font-size: 2.5vh;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.select-items {
+    position: absolute;
+    background-color: transparent;
+    color: #00ff00;
+    border: 1px solid transparent;
+    text-align: center;
+    font-size: 2.5vh;
+    font-weight: bold;
+    width: 100%;
+    display: none;
+    z-index: 99;
+}
+
+.select-items .select-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.select-items .select-option:hover {
+    background-color: #008000;
+    opacity: 0.7;
+}
+
+/* Ocultar los elementos del select cuando no están activos */
+.select-hide {
+    display: none;
+}
+
+/* Mostrar el dropdown cuando se pase el ratón sobre el select */
+.custom-select:hover .select-items {
+    display: block;
+}
+
+@media (max-width: 840px) {
+    .container-head {
+        height: 10vh;
+
+    }
+    .container-head-left {
+        font-size: 1.5vw;
+        font-size: 2.5vh;
+        padding: 3vw;
+    }
+    .container-head-right {
+        font-size: 1.5vw;
+        font-size: 2.5vh;
+        
+        text-align: right;
+    }
+    .container-head-right a {
+
+        font-size: 1vw;
+        font-size: 2vh; 
+        
+    }
+    .container-head-middle {
+        display: none;
+    }
+    .custom-select {
+        position: relative;
+        display: inline-block;
+        width: 50vw; /* Ajustar el ancho según sea necesario */
+    }
+    .container-head-left-inicio {
+        font-size: 2vw;
+        font-size: 4vh;
+ 
+    }
+
+    
+    
+}
