@@ -116,7 +116,6 @@ body {
 
 /* Estilo para la parte derecha del encabezado */
 .container-body-texto-cv a {
-    
     background-color: #00ff00; /* Color de fondo del botón */
     color: #002000; /* Color del texto del botón */
     text-decoration: none; /* Quita el subrayado del enlace */

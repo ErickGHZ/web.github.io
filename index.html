@@ -9,81 +9,31 @@
 </head>
 <body>
     <div class="container">
+        <!-- Header siempre visible -->
         <div class="container-head">
-            <a class="container-head-left-inicio" href="#inicio">Erick</a>
+            <a class="container-head-left-inicio" href="#inicio" onclick="loadContent('sobre-mi')">Erick</a>
             <div class="container-head-middle">
-                <a class="container-head-middle-right" href="#sobre-mi">Sobre mí</a>
-                <a class="container-head-middle-left" href="#proyectos">Proyectos</a>
+                <a class="container-head-middle-right" href="#sobre-mi" onclick="loadContent('sobre-mi')">Sobre mí</a>
+                <a class="container-head-middle-left" href="#proyectos" onclick="loadContent('proyectos')">Proyectos</a>
             </div>
             <div class="custom-select">
-                <div class="select-selected">Sobre mí</div>
+                <div class="select-selected" onclick="toggleDropdown()">Inicio</div>
                 <div class="select-items select-hide">
-                    <div class="select-option" data-value="#sobre-mi">Sobre mí</div>
-                    <div class="select-option" data-value="#proyectos">Proyectos</div>
+                    <div class="select-option" data-value="#sobre-mi" onclick="loadContent('sobre-mi')">Sobre mí</div>
+                    <div class="select-option" data-value="#proyectos" onclick="loadContent('proyectos')">Proyectos</div>
                 </div>
             </div>
             <div class="container-head-right">
-                <a href="#contacto">Contacto</a>
+                <a href="#contacto" onclick="loadContent('contacto')">Contacto</a>
             </div>
         </div>
 
-        <div class="container-body">
-            <div class="container-body-imagen">
-                <video autoplay loop muted playsinline class="responsive-img">
-                    <source src="perfil.webm" type="video/webm" />
-                  </video>
-            </div>
-            <div class="container-body-texto">
-                <div class="container-body-texto-nombre">
-                    <h1>Erick Gutierrez Hernandez</h1>
-                </div>
-                <div class="container-body-texto-titulo"> 
-                    <h2>Ingeniero en Desarrollo de Software</h2>
-                </div>
-                <div class="container-body-texto-descripcion">            
-                    <h3>Soy un estudiante apasionado por el desarrollo de software, con experiencia en varios proyectos. <br> Me dedico a la creación de sistemas y estoy emocionado por seguir aprendiendo y explorando diferentes áreas del desarrollo.</h3>
-                </div>
-                <div class="container-body-texto-cv">
-            
-                        <a href="cv.pdf" download="cv.pdf">Descargar CV</a>
-     
-                </div>
-            </div>
+        <!-- Contenido dinámico del body -->
+        <div class="container-body" id="container-body">
+            <!-- Aquí se cargará el contenido dinámico -->
         </div>
     </div>    
 
-<script>
-    function toggleDropdown() {
-        const selectItems = document.querySelector('.select-items');
-        selectItems.classList.toggle('select-hide');
-    }
-
-    function selectOption(option) {
-        const selected = document.querySelector('.select-selected');
-        selected.innerText = option.innerText;
-        window.location.hash = option.getAttribute('data-value'); // Simula el cambio de página
-        document.querySelector('.select-items').classList.add('select-hide');
-    }
-
-    document.querySelector('.select-selected').addEventListener('mouseover', function() {
-        document.querySelector('.select-items').classList.remove('select-hide');
-    });
-
-    document.querySelectorAll('.select-option').forEach(option => {
-        option.addEventListener('click', function() {
-            selectOption(this);
-        });
-    });
-
-    window.addEventListener('click', function(event) {
-        if (!event.target.matches('.custom-select') && !event.target.matches('.select-selected')) {
-            const selectItems = document.querySelector('.select-items');
-            if (!selectItems.classList.contains('select-hide')) {
-                selectItems.classList.add('select-hide');
-            }
-        }
-    });
-    
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
