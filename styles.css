@@ -120,10 +120,12 @@ body {
     background-color: #00ff00; /* Color de fondo del botón */
     color: #002000; /* Color del texto del botón */
     text-decoration: none; /* Quita el subrayado del enlace */
+    align-content: center;
     padding: 1vh 2vw; /* Espaciado interno del botón */
     border-radius: .5vw; /* Bordes redondeados del botón */
     font-size: 1.5vw; /* Ajusta el tamaño de la fuente del botón */
     font-weight: bold;
+    height: 4vh;
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transición suave */
 }
 
