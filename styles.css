@@ -89,10 +89,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: top;
-    height: 45vh;
+    height: 25vh;
     background-color:  transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
+
 
 .container-body-texto-descripcion h3 {
     width: 100vw;
@@ -104,6 +105,31 @@ body {
     padding: 1vw;  
 }
 
+.container-body-texto-cv {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 20vh;
+    background-color:  transparent;
+    width: 50vw;
+}
+
+/* Estilo para la parte derecha del encabezado */
+.container-body-texto-cv a {
+    
+    background-color: #00ff00; /* Color de fondo del botón */
+    color: #002000; /* Color del texto del botón */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    padding: 1vh 2vw; /* Espaciado interno del botón */
+    border-radius: .5vw; /* Bordes redondeados del botón */
+    font-size: 1.5vw; /* Ajusta el tamaño de la fuente del botón */
+    font-weight: bold;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transición suave */
+}
+
+.container-body-texto-cv a:hover {
+    transform: scale(1.1); /* Agranda ligeramente el botón al pasar el ratón */
+}
 .container-footer {
     display: flex;
     justify-self: start;
@@ -128,18 +154,23 @@ body {
         height: 45vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
     }
     .container-body-texto-nombre {
-        height: 15vh;
+        height: 12.5vh;
         justify-self: center;
         align-items: center;
         width: 100vw; /* Add this line to make the div cover the entire screen width */
     }
     .container-body-texto-titulo {
-        height: 12.5vh;
+        height: 10vh;
         width: 100vw; /* Add this line to make the div cover the entire screen width */
         align-items: center;
     }
     .container-body-texto-descripcion {
-        height: 17.5vh;
+        height: 15vh;
+        width: 100vw;
+        align-items: center; /* Add this line to make the div cover the entire screen width */
+    }
+    .container-body-texto-cv {
+        height: 7.5vh;
         width: 100vw;
         align-items: center; /* Add this line to make the div cover the entire screen width */
     }
@@ -155,6 +186,10 @@ body {
     }
     .container-body-texto-descripcion h3 {
         text-align: center;
+        font-size: 1vw;
+        font-size: 2vh;
+    }
+    .container-body-texto-cv a {
         font-size: 1vw;
         font-size: 2vh;
     }
@@ -351,6 +386,10 @@ body {
         font-size: 2vw;
         font-size: 4vh;
  
+    }
+    .container-body-texto-titulo h2 {
+  
+        padding-right: 0vw;
     }
 
     
