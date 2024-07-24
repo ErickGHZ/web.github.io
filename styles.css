@@ -423,9 +423,114 @@ body {
     align-items: center;
     height: 37.5vh;
     background-color: #00ff00;
-    width: 40vw; /* Add this line to make the div cover the entire screen width */
+    width: 45vw; /* Add this line to make the div cover the entire screen width */
     border-radius: 10px;
+    margin-left: 2.5vw;
+    
+
 }
+
+    .container-body-estudios-educacion-contenido-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7.5vh;
+    width: 45vw;
+    
+    }
+
+    .container-body-estudios-educacion-contenido-titulo h1 {
+        width: 100vw;
+        font-size: 2vw;
+        font-size: 4vh;
+        color: #002000;
+        text-align: center;
+        margin: 0;
+        padding: 1vw;  
+    }
+    .container-body-estudios-educacion-contenido-cuerpo{
+        display: flex;
+        
+        flex-direction: column;
+        align-items: center;
+        height: 30vh;
+        width: 45vw;
+        overflow: auto;
+        }
+        /* Personaliza la barra de desplazamiento */
+        .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar {
+            width: 2vw;
+        }
+
+        .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar-track {
+            
+            background-color: #00ff00; /* Color de fondo de la barra de desplazamiento */
+        }
+
+        .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar-thumb {
+            background:#00ff00 url('marciano.webp') no-repeat;
+            background-size:100% auto;  
+            height:50%; 
+            background-position: center; /* Centra el fondo dentro del thumb */
+            
+        }
+
+        .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar-thumb:hover {
+            background:#00ff00 url('2.webp') no-repeat;
+            background-size:100% auto;  
+            height:50%; 
+            background-position: center; /* Centra el fondo dentro del thumb */
+            
+        }
+
+
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 43vw;
+            background-color: transparent;
+        }
+
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor h2 {
+            width: 41vw;
+            font-size: 1.5vw;
+            font-size: 3vh;
+            color: #002000;
+            text-align: start;
+            margin: 0;
+            padding: .5vh 1vw;  
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor h3 {
+            width: 41vw;
+            font-size: 1.2vw;
+            font-size: 2.4vh;
+            color: #002000;
+            text-align: start;
+            margin: 0;
+            padding: 1vh 1vw;  
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor h4 {
+            width: 41vw;
+            font-size: 1.2vw;
+            font-size: 2.4vh;
+            color: #002000;
+            text-align: start;
+            margin: 0;
+            padding: 1vh 1vw;  
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor p {
+            width: 41vw;
+            font-size: 1vw;
+            font-size: 2vh;
+            color: #002000;
+            text-align: start;
+            margin: 0;
+            padding: 1vh 1vw;  
+        }
+
+
+
 .container-body-estudios-certificaciones {
     display: flex;
     justify-content: center;
@@ -441,16 +546,89 @@ body {
     align-items: center;
     height: 37.5vh;
     background-color: #00ff00;
-    width: 40vw; /* Add this line to make the div cover the entire screen width */
+    width: 45vw; /* Add this line to make the div cover the entire screen width */
     border-radius: 10px;
-}
+    margin-left: 2.5vw;
+    
 
-.container-body-tecnologias {
+}
+.container-body-estudios-certificaciones-contenido-titulo{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 85vh;
-    background-color: #002000;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
-}
+    height: 7.5vh;
+    width: 45vw;
+    
+    }
+
+    .container-body-estudios-certificaciones-contenido-titulo h1 {
+        width: 100vw;
+        font-size: 2vw;
+        font-size: 4vh;
+        color: #002000;
+        text-align: center;
+        margin: 0;
+        padding: 1vw;  
+    }
+    .container-body-estudios-certificaciones-contenido-cuerpo{
+        display: flex;
+        
+        flex-direction: column;
+        align-items: center;
+        height: 30vh;
+        width: 45vw;
+        
+        overflow: auto;
+        }
+                /* Personaliza la barra de desplazamiento */
+        .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar {
+            width: 2vw; /* Ancho de la barra de desplazamiento */
+            
+            
+        }
+
+        .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar-track {
+            background-color: #00ff00; /* Color de fondo de la barra de desplazamiento */
+        }
+
+        .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar-thumb {
+            background:#00ff00 url('marciano.webp') no-repeat;
+            background-size:100% auto;
+            height:50%; 
+            background-position: center; /* Centra el fondo dentro del thumb */
+
+            
+        }
+
+        .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar-thumb:hover {
+            background:#00ff00 url('2.webp') no-repeat;
+            background-size:100% auto;  
+            height:50%; 
+            background-position: center; /* Centra el fondo dentro del thumb */
+            
+        }
+
+
+    .container-body-tecnologias {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+        background-color: #002000;
+        width: 50vw; /* Add this line to make the div cover the entire screen width */
+    }
+
+    .container-body-tecnologias-contenido{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        width: 45vw;
+        margin-right: 2.5vw;
+        background-color: #00ff00;
+        border-radius: 10px;
+        overflow: hidden; /* Esconde cualquier contenido que se salga del contenedor */
+
+    }

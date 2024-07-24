@@ -25,18 +25,70 @@ const content = {
         <div class="container-body-estudios">
             <div class="container-body-estudios-educacion">
                 <div class="container-body-estudios-educacion-contenido">
+                    <div class="container-body-estudios-educacion-contenido-titulo">
+                        <h1>Educación</h1>
+
+                    </div>
+                    <div class="container-body-estudios-educacion-contenido-cuerpo">
+                        <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor">
+                            <h2>Cbtis 179</h2>
+                            <h3>Programacion</h3>    
+                            <h4>2019 - 2022</h4>
+                            <p>Estudie en el Cbtis 179 la carrera de Programacion, donde aprendi sobre programación, bases de datos, diseño web, entre otros.</p>
+                        </div>
+                        <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor">
+                            <h2>Universidad Tecnologica de Tulancingo</h2>
+                            <h3>Ingeniería en Tecnologias de la Informacion area Desarollo de Software Multiplataforma</h3>
+                            <h4>2022 - 2024</h4>
+                            <p>Actualmente cursando la carrera de Ingeniería en Tecnologias de la Informacion area Desarollo de Software Multiplataforma en la Universidad Tecnologica de Tulancingo. He aprendido sobre el desarrollo de software, programación, bases de datos, diseño web, entre otros.</p>
+                        </div>
+                       
+       
+                    </div>
 
                 </div>
             </div>
 
             <div class="container-body-estudios-certificaciones">
                 <div class="container-body-estudios-certificaciones-contenido">
+                    <div class="container-body-estudios-certificaciones-contenido-titulo">
+                        <h1>Certificaciones</h1>
 
+                    </div>
+                    <div class="container-body-estudios-certificaciones-contenido-cuerpo">
+                        <h2>Fundamentos de redes TSU TI SD2022</h2>
+                        <h3>Cisco</h3>    
+                        <h4>2022</h4>
+                        <p>Curso donde aprendí los conceptos básicos de redes, incluyendo topologías de red, protocolos de comunicación, direccionamiento IP, y configuración de dispositivos de red como routers y switches.</p>
+
+                        <h2>Interconexión de redes TI 22</h2>
+                        <h3>Cisco</h3>
+                        <h4>2023</h4>
+                        <p>Curso donde aprendí a interconectar redes locales (LAN) y redes de área extensa (WAN), además de configurar protocolos de enrutamiento, realizar la configuración avanzada de dispositivos de red y solucionar problemas de conectividad.</p>
+
+                        <h2>Interconexión de redes TI 22</h3>
+                        <h3>Cisco</h3>
+                        <h4>2023</h4>
+                        <p>Curso donde aprendí a interconectar redes locales (LAN) y redes de área extensa (WAN), además de configurar protocolos de enrutamiento, realizar la configuración avanzada de dispositivos de red y solucionar problemas de conectividad.</p>
+
+                        <h2>BDComputoNube</h2>
+                        <h3>Cisco</h3>
+                        <h4>2024</h4>
+                        <p>Curso donde aprendí a diseñar, implementar y gestionar bases de datos en entornos de computación en la nube, utilizando tecnologías y servicios de cloud computing para almacenar y analizar datos de manera eficiente y segura.</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="container-body-tecnologias">
+                <div class="container-body-tecnologias-contenido">
+                     <div class="container-body-estudios-tecnologias-contenido-titulo">
+                        <h1>Tecnologias</h1>
 
+                    </div>
+                    <div class="container-body-estudios-tecnologias-contenido-cuerpo">
+                         
+                    </div>
+                </div>
         </div>
     `,
     "proyectos": `
