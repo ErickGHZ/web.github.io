@@ -91,3 +91,34 @@ const imagesToPreload = [
 preloadImages(imagesToPreload);
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const educacionTitulo = document.querySelector('.container-body-estudios-educacion-contenido-titulo');
+    const certificacionesTitulo = document.querySelector('.container-body-estudios-certificaciones-contenido-titulo');
+    const educacionCuerpo = document.querySelector('.container-body-estudios-educacion-contenido-cuerpo');
+    const certificacionesCuerpo = document.querySelector('.container-body-estudios-certificaciones-contenido-cuerpo');
+
+    // Asegúrate de que el script solo se ejecute en pantallas pequeñas
+    if (window.innerWidth <= 840) {
+        educacionTitulo.addEventListener('click', () => {
+            if (educacionCuerpo.style.display === 'none') {
+                educacionCuerpo.style.display = 'flex';
+                certificacionesCuerpo.style.display = 'none';
+            } else {
+                educacionCuerpo.style.display = 'none';
+                certificacionesCuerpo.style.display = 'none';
+            }
+        });
+
+        certificacionesTitulo.addEventListener('click', () => {
+            if (certificacionesCuerpo.style.display === 'none') {
+                certificacionesCuerpo.style.display = 'flex';
+                educacionCuerpo.style.display = 'none';
+            } else {
+                certificacionesCuerpo.style.display = 'none';
+                educacionCuerpo.style.display = 'none';
+            }
+        });
+    }
+});
+
