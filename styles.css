@@ -479,7 +479,7 @@ body {
         }
 
         .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar-thumb:hover {
-            background:#00ff00 url('2.webp') no-repeat;
+            background:#00ff00 url('marciano2.webp') no-repeat;
             background-size:100% auto;  
             height:50%; 
             background-position: center; /* Centra el fondo dentro del thumb */
@@ -641,7 +641,7 @@ body {
         }
 
         .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar-thumb:hover {
-            background:#00ff00 url('2.webp') no-repeat;
+            background:#00ff00 url('marciano2.webp') no-repeat;
             background-size:100% auto;  
             height:50%; 
             background-position: center; /* Centra el fondo dentro del thumb */
