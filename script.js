@@ -1,3 +1,6 @@
+
+
+
 // Contenidos para cada sección
 const content = {
     "inicio": `
@@ -32,7 +35,7 @@ const content = {
                     <div class="container-body-estudios-educacion-contenido-cuerpo" >
                         <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor">
                             <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor-titulo">
-                                <img src="educacion.webp" alt="educacion">
+                                <img  src="educacion.webp" alt="educacion">
                                 <h2>Cbtis 179</h2>
                             </div>
                             <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor-cuerpo">
@@ -83,7 +86,7 @@ const content = {
                     <div class="container-body-estudios-certificaciones-contenido-cuerpo">
                         <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor">
                             <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor-titulo">
-                                <img src="certificado.webp" alt="certificado">
+                                <img loading="lazy" src="certificado.webp" alt="certificado">
                                 <h2>Fundamentos de redes TSU TI SD2022</h2>
                             </div>
                             <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor-cuerpo">
@@ -93,7 +96,7 @@ const content = {
                         </div>
                         <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor">
                             <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor-titulo">
-                                <img src="certificado.webp" alt="certificado">
+                                <img loading="lazy" src="certificado.webp" alt="certificado">
                                 <h2>Interconexión de redes TI 22</h2>
                             </div>
                             <div class="container-body-estudios-educacion-contenido-cuerpo-contenedor-cuerpo">
@@ -246,12 +249,53 @@ const content = {
     `
 };
 
+// Redirigir a la sección "inicio" al cargar la página si no hay hash en la URL
+window.addEventListener('load', () => {
+    if (!window.location.hash) {
+        window.location.hash = '#inicio';
+    }
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.style.display = 'none';
+    }
+});
+
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    // Verificar si todas las imágenes han sido cargadas
+    const images = document.querySelectorAll('img');
+    const totalImages = images.length;
+    let loadedImages = 0;
+
+    images.forEach((img) => {
+        img.addEventListener('load', () => {
+            loadedImages++;
+            if (loadedImages === totalImages) {
+                loader.style.display = 'none';
+            }
+        });
+        img.addEventListener('error', () => {
+            loadedImages++;
+            if (loadedImages === totalImages) {
+                loader.style.display = 'none';
+            }
+        });
+    });
+
+    // Si no hay imágenes o todas ya están cargadas
+    if (totalImages === 0 || loadedImages === totalImages) {
+        loader.style.display = 'none';
+    }
+});
+
+
 // Función para cargar el contenido
 function loadContent(section) {
     const containerBody = document.getElementById('container-body');
     containerBody.innerHTML = content[section];
     const selected = document.querySelector('.select-selected');
-    selected.innerText = document.querySelector(`.select-option[data-value="#${section}"]`).innerText;
+    selected.innerText = document.querySelector(`.select-option[data-value="#${section}"]`);
 }
 
 // Inicialmente carga "Inicio"
@@ -287,6 +331,5 @@ window.addEventListener('click', function(event) {
         }
     }
 });
-
 
 
