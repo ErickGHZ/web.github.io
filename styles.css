@@ -763,21 +763,24 @@ body {
         overflow: hidden;
         width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
         height: 15vh;
-        
+
     
     }
+
     .container-body-tecnologias-contenido-cuerpo-logos-grupos {
         display: flex;
         width: 90vw;
         height: 15vh;
-        animation: move 10s linear infinite; /* Animación de desplazamiento */
+        animation: move 12s linear infinite; /* Animación de desplazamiento */
     }
+
     .container-body-tecnologias-contenido-cuerpo-logos-group {
         display: flex;
         width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
         height: 15vh;
         align-items: center;
     }
+
 
     .container-body-tecnologias-contenido-cuerpo-logos img{
         width: 6vw;
@@ -792,6 +795,40 @@ body {
             transform: translateX(0);
         }
         100% {
+            transform: translateX(-50%);
+        }
+    }
+    .container-body-tecnologias-contenido-cuerpo-logos-reverse {
+        display: flex;
+        overflow: hidden;
+        width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
+        height: 15vh;
+
+    
+    }    .container-body-tecnologias-contenido-cuerpo-logos-grupos-reverse {
+        display: flex;
+        width: 90vw;
+        height: 15vh;
+        animation: movereverse 12s linear infinite; /* Animación de desplazamiento */
+    }
+    .container-body-tecnologias-contenido-cuerpo-logos-group-reverse {
+        display: flex;
+        width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
+        height: 15vh;
+        align-items: center;
+    }
+    .container-body-tecnologias-contenido-cuerpo-logos-reverse img{
+        width: 6vw;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        padding: 0vh 2.5vw;
+    }
+    @keyframes movereverse {
+        100% {
+            transform: translateX(0);
+        }
+        0% {
             transform: translateX(-50%);
         }
     }
