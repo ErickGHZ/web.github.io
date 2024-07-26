@@ -127,7 +127,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: top;
-    height: 25vh;
+    height: 28vh;
     background-color:  transparent;
     width: 50vw; /* Add this line to make the div cover the entire screen width */
 }
@@ -551,8 +551,6 @@ body {
             width: auto;
             height: 6vh;
             margin: 0vh 1vw;
-            
-            
         }
 
         .container-body-estudios-educacion-contenido-cuerpo-contenedor h2 {
@@ -831,4 +829,179 @@ body {
         0% {
             transform: translateX(-50%);
         }
+    }
+
+    @media (max-width: 840px) {
+        .container-body-estudios {
+            height: 45vh;
+            width: 100vw;
+        }
+        .container-body-estudios-educacion {
+            height: 22.5vh;
+            background-color:  transparent;
+            width: 90vw; /* Add this line to make the div cover the entire screen width */
+        }  
+        .container-body-estudios-educacion-contenido {
+            height: 20vh;
+            width: 90vw; /* Add this line to make the div cover the entire screen width */
+            margin-left: 0vw;
+        }
+        .container-body-estudios-educacion-contenido-titulo{
+            height: 4vh;
+            width: 90vw;
+      
+            }
+        .container-body-estudios-educacion-contenido-titulo h1 {
+            font-size: 1.5vw;
+            font-size: 3vh;
+        }
+        .container-body-estudios-educacion-contenido-cuerpo{
+            height: 16vh;
+            width: 90vw;
+        }
+    	.container-body-estudios-educacion-contenido-cuerpo-contenedor{
+            height: 100vh;
+            width: 85vw;
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor-titulo {
+            width: 85vw;
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor img {
+            height: 4vh;
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor h2 {
+            width: 85vw;
+            font-size: 1.2vw;
+            font-size: 2.4vh;
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor-cuerpo {
+            height: auto;
+            width: 85vw;
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor h3 {
+            width: 84vw;
+            font-size: 1vw;
+            font-size: 2vh;   
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor h4 {
+            width: 84vw;
+            font-size: 1vw;
+            font-size: 2vh;
+        }
+        .container-body-estudios-educacion-contenido-cuerpo-contenedor p {
+            width: 84vw;
+            font-size: 1vw;
+            font-size: 2vh;
+        }
+        .container-body-estudios-certificaciones {
+            height: 22.5vh;
+            width: 90vw;
+        }
+        .container-body-estudios-certificaciones-contenido {
+            height: 20vh;
+            width: 90vw; /* Add this line to make the div cover the entire screen width */
+            margin-left: 0vw;
+        }
+        .container-body-estudios-certificaciones-contenido-titulo{
+            height: 4vh;
+            width: 90vw;
+        }
+        .container-body-estudios-certificaciones-contenido-titulo h1 {
+            font-size: 1.5vw;
+            font-size: 3vh;
+        }
+        .container-body-estudios-certificaciones-contenido-cuerpo{
+            height: 16vh;
+            width: 90vw;
+        }
+        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor{
+            height: 100vh;
+            width: 85vw;
+        }
+        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor-titulo {
+            width: 85vw;
+        }
+        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor img {
+            height: 4vh;
+        }
+        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor h2 {
+            width: 85vw;
+            font-size: 1.2vw;
+            font-size: 2.4vh;
+        }
+        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor-cuerpo {
+            height: auto;
+            width: 85vw;
+        }
+        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor h3 {
+            width: 84vw;
+            font-size: 1vw;
+            font-size: 2vh;   
+        }
+        .container-body-tecnologias {
+            height: 45vh;
+            width: 100vw;
+        }
+        .container-body-tecnologias-contenido{
+            height: 42.5vh;
+            width: 90vw;
+            margin-right: 0vw;
+        }
+        .container-body-tecnologias-contenido-titulo {
+            height: 5vh;
+            width: 90vw;
+        }
+        .container-body-tecnologias-contenido-titulo h1 {
+            font-size: 1.5vw;
+            font-size: 3vh;
+        }
+        .container-body-tecnologias-contenido-cuerpo {
+            height: 37.5vh;
+            width: 90vw;
+        }
+        .container-body-tecnologias-contenido-cuerpo-contenedor {
+            height: 12.5vh;
+            width: 90vw;
+        }
+        .container-body-tecnologias-contenido-cuerpo-titulo {
+            height: 4.16vh;
+            width: 90vw;
+        }
+        .container-body-tecnologias-contenido-cuerpo-titulo h2{
+            font-size: 1.2vw;
+            font-size: 2.4vh;
+        }
+        .container-body-tecnologias-contenido-cuerpo-logos {
+            height: 8.34vh;
+            width: 90vw;
+        }
+        .container-body-tecnologias-contenido-cuerpo-logos-grupos {
+            width: 180vw;
+            height: 8.34vh;
+        }
+        .container-body-tecnologias-contenido-cuerpo-logos-group {
+            width: 90vw;
+            height: 8.34vh;
+        }
+        .container-body-tecnologias-contenido-cuerpo-logos-group img{
+            width: 7vw;
+            padding: 0vh 8vw;
+        }
+                .container-body-tecnologias-contenido-cuerpo-logos-reverse {
+            height: 8.34vh;
+            width: 90vw;
+        }
+        .container-body-tecnologias-contenido-cuerpo-logos-grupos-reverse {
+            width: 180vw;
+            height: 8.34vh;
+        }
+        .container-body-tecnologias-contenido-cuerpo-logos-group-reverse {
+            width: 90vw;
+            height: 8.34vh;
+        }
+        .container-body-tecnologias-contenido-cuerpo-logos-group-reverse img {
+            width: 7vw;
+            padding: 0vh 8vw;
+        }
+
     }
