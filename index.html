@@ -6,23 +6,7 @@
     <title>Erick Gutierrez</title>
     <meta name="description" content="Erick Gutierrez Hernandez es un estudiante apasionado por el desarrollo de software, con experiencia en varios proyectos. Se dedica a la creación de sistemas y está emocionado por seguir aprendiendo y explorando diferentes áreas del desarrollo.">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preload" href="educacion.webp" as="image">
-    <link rel="preload" href="certificado.webp" as="image">
-    <link rel="preload" href="1.webp" as="image">
-    <link rel="preload" href="2.webp" as="image">
-    <link rel="preload" href="3.webp" as="image">
-    <link rel="preload" href="4.webp" as="image">
-    <link rel="preload" href="5.webp" as="image">
-    <link rel="preload" href="6.webp" as="image">
-    <link rel="preload" href="7.webp" as="image">
-    <link rel="preload" href="8.webp" as="image">
-    <link rel="preload" href="9.webp" as="image">
-    <link rel="preload" href="10.webp" as="image">
-    <link rel="preload" href="11.webp" as="image">
-    <link rel="preload" href="12.webp" as="image">
-    <link rel="preload" href="marciano.webp" as="image">
-    <link rel="preload" href="marciano2.webp" as="image">
-    <link rel="preload" href="perfil.webm" as="video">
+
 </head>
 <body>
     <div id="loader" class="loader">
@@ -32,26 +16,44 @@
     <div class="container">
         <!-- Header siempre visible -->
         <div class="container-head">
-            <a class="container-head-left-inicio" href="#inicio" onclick="loadContent('inicio')">Erick</a>
+            <a class="container-head-left-inicio" href="/index.html" >Erick</a>
             <div class="container-head-middle">
-                <a class="container-head-middle-right" href="#sobre-mi" onclick="loadContent('sobre-mi')">Sobre mí</a>
-                <a class="container-head-middle-left" href="#proyectos" onclick="loadContent('proyectos')">Proyectos</a>
+                <a class="container-head-middle-right" href="/me.html" >Sobre mí</a>
+                <a class="container-head-middle-left" href="#proyectos">Proyectos</a>
             </div>
             <div class="custom-select">
-                <div class="select-selected" onclick="toggleDropdown()">Sobre mí</div>
+                <div class="select-selected">Sobre mí</div>
                 <div class="select-items select-hide">
-                    <div class="select-option" data-value="#sobre-mi" onclick="loadContent('sobre-mi')">Sobre mí</div>
-                    <div class="select-option" data-value="#proyectos" onclick="loadContent('proyectos')">Proyectos</div>
+                    <div class="select-option"  ><a href="/me.html">Sobre mí</a> </div>
+                    <div class="select-option" ><a href="#proyectos">Proyectos</a></div>
                 </div>
             </div>
             <div class="container-head-right">
-                <a href="#contacto" onclick="loadContent('contacto')">Contacto</a>
+                <a href="#contacto">Contacto</a>
             </div>
         </div>
 
         <!-- Contenido dinámico del body -->
         <div class="container-body" id="container-body">
-            <!-- Aquí se cargará el contenido dinámico -->
+            <div class="container-body-imagen">
+                <video autoplay loop muted playsinline class="responsive-img">
+                    <source src="perfil.webm" type="video/webm" />
+                </video>
+            </div>
+            <div class="container-body-texto">
+                <div class="container-body-texto-nombre">
+                    <h1>Erick Gutierrez Hernandez</h1>
+                </div>
+                <div class="container-body-texto-titulo"> 
+                    <h2>Ingeniero en Desarrollo de Software</h2>
+                </div>
+                <div class="container-body-texto-descripcion">            
+                    <h3>Soy un estudiante apasionado por el desarrollo de software, con experiencia en varios proyectos. <br> Me dedico a la creación de sistemas y estoy emocionado por seguir aprendiendo y explorando diferentes áreas del desarrollo.</h3>
+                </div>
+                <div class="container-body-texto-cv">
+                    <a href="cv.pdf" download="cv.pdf">Descargar CV</a>
+                </div>
+            </div>
         </div>
     </div>    
 
