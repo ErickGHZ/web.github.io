@@ -670,5 +670,89 @@ body {
         background-color: #00ff00;
         border-radius: 10px;
         overflow: hidden; /* Esconde cualquier contenido que se salga del contenedor */
+    }
+    .container-body-tecnologias-contenido-titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        width: 45vw;
+        background-color: transparent;
+    }
+    .container-body-tecnologias-contenido-titulo h1 {
+        font-size: 2vw;
+        font-size: 4vh;
+    }
+    .container-body-tecnologias-contenido-cuerpo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        width: 45vw;
+        overflow: auto;
+        background-color: transparent;
+    }
+    .container-body-tecnologias-contenido-cuerpo-contenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 23.33vh;
+        width: 45vw;
+        background-color: transparent;
+        width: 100%; /* O el ancho que desees para el contenedor visible */
+        overflow: hidden; /* Esconde cualquier contenido que se salga del contenedor */
+        position: relative; 
+        
+        
+    }
+    .container-body-tecnologias-contenido-cuerpo-titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 8.33vh;
+        width: 45vw;
+        background-color: transparent;
+    }
+    .container-body-tecnologias-contenido-cuerpo-titulo h2{
+        font-size: 1.5vw;
+        font-size: 3vh;
+    }
+    .container-body-tecnologias-contenido-cuerpo-logos {
+        display: flex;
+        overflow: hidden;
+        width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
+        height: 15vh;
+        
+    
+    }
+    .container-body-tecnologias-contenido-cuerpo-logos-grupos {
+        display: flex;
+        width: 90vw;
+        height: 15vh;
+        animation: move 10s linear infinite; /* Animación de desplazamiento */
+    }
+    .container-body-tecnologias-contenido-cuerpo-logos-group {
+        display: flex;
+        width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
+        height: 15vh;
+        align-items: center;
+    }
 
+    .container-body-tecnologias-contenido-cuerpo-logos img{
+        width: 6vw;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        padding: 0vh 2.5vw;
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
     }

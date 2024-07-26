@@ -124,22 +124,80 @@ const content = {
                             <p>Curso donde aprendí a diseñar, implementar y gestionar bases de datos en entornos de computación en la nube, utilizando tecnologías y servicios de cloud computing para almacenar y analizar datos de manera eficiente y segura.</p>
                             </div>
                         </div>
-                       
-
-
-                       
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-body-tecnologias">
                 <div class="container-body-tecnologias-contenido">
-                     <div class="container-body-estudios-tecnologias-contenido-titulo">
+                     <div class="container-body-tecnologias-contenido-titulo">
                         <h1>Tecnologias</h1>
 
                     </div>
-                    <div class="container-body-estudios-tecnologias-contenido-cuerpo">
-                         
+                    <div class="container-body-tecnologias-contenido-cuerpo">
+                        <div class="container-body-tecnologias-contenido-cuerpo-contenedor">
+                            <div class="container-body-tecnologias-contenido-cuerpo-titulo">
+                            <h2>Desarrollo Web</h2>
+                            </div>
+                            <div class="container-body-tecnologias-contenido-cuerpo-logos">
+                                <div class="container-body-tecnologias-contenido-cuerpo-logos-grupos">
+                                    <div class="container-body-tecnologias-contenido-cuerpo-logos-group">
+                                        <img src="1.webp" alt="html">
+                                        <img src="2.webp" alt="css">
+                                        <img src="3.webp" alt="js">
+                                        <img src="4.webp" alt="react">
+                                    </div>
+                                    <div class="container-body-tecnologias-contenido-cuerpo-logos-group">
+                                        <img src="1.webp" alt="html">
+                                        <img src="2.webp" alt="css">
+                                        <img src="3.webp" alt="js">
+                                        <img src="4.webp" alt="react">
+                                    </div>
+                                    </div>    
+                                </div>
+                        </div>
+                        <div class="container-body-tecnologias-contenido-cuerpo-contenedor">
+                            <div class="container-body-tecnologias-contenido-cuerpo-titulo">
+                            <h2>Control de Versiones y Desarrollo Móvil</h2>
+                            </div>
+                            <div class="container-body-tecnologias-contenido-cuerpo-logos">
+                                <div class="container-body-tecnologias-contenido-cuerpo-logos-grupos">
+                                    <div class="container-body-tecnologias-contenido-cuerpo-logos-group">
+                                        <img src="5.webp" alt="html">
+                                        <img src="6.webp" alt="css">
+                                        <img src="7.webp" alt="js">
+                                        <img src="8.webp" alt="react">
+                                    </div>
+                                    <div class="container-body-tecnologias-contenido-cuerpo-logos-group">
+                                        <img src="5.webp" alt="html">
+                                        <img src="6.webp" alt="css">
+                                        <img src="7.webp" alt="js">
+                                        <img src="8.webp" alt="react">
+                                    </div>
+                                    </div>    
+                                </div>
+                        </div>
+                        <div class="container-body-tecnologias-contenido-cuerpo-contenedor">
+                            <div class="container-body-tecnologias-contenido-cuerpo-titulo">
+                            <h2>Bases de Datos y APIs</h2>
+                            </div>
+                            <div class="container-body-tecnologias-contenido-cuerpo-logos">
+                                <div class="container-body-tecnologias-contenido-cuerpo-logos-grupos">
+                                    <div class="container-body-tecnologias-contenido-cuerpo-logos-group">
+                                        <img src="9.webp" alt="html">
+                                        <img src="10.webp" alt="css">
+                                        <img src="11.webp" alt="js">
+                                        <img src="12.webp" alt="react">
+                                    </div>
+                                    <div class="container-body-tecnologias-contenido-cuerpo-logos-group">
+                                        <img src="9.webp" alt="html">
+                                        <img src="10.webp" alt="css">
+                                        <img src="11.webp" alt="js">
+                                        <img src="12.webp" alt="react">
+                                    </div>
+                                    </div>    
+                                </div>
+                        </div>
                     </div>
                 </div>
         </div>
