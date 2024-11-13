@@ -1,1020 +1,404 @@
-
-.loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #002000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.spinner {
-    border: 16px solid #008000; /* Color de fondo */
-    border-top: 16px solid #00ff00; /* Color del spinner */
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-.lazy {
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.lazy-loaded {
-    opacity: 1;
-}
-
-html {
-    scroll-behavior: smooth;
-  }
-body {
+body{
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+
 }
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #002000;
-    width: 100vw; /* Add this line to make the div cover the entire screen width */
-}
-.container-body {
+header {    
     display: flex;
     flex-direction: row;
-    justify-self: center;
-    align-items: center;
-    height: 85vh;
-    background-color: transparent;
-    width: 100vw; /* Add this line to make the div cover the entire screen width */
+    height: 10vh;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
 }
-.container-body-imagen {
+.header-inicio {
     display: flex;
+    height: 10vh;
+    width: 20%;
+    justify-content: start;
+    align-items: end;
+    padding-left: 5%;
+}
+.header-inicio h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.8em;
+    
+}
+.header-menu {
+    display: flex;
+    height: 10vh;
+    width: 60%;
     justify-content: center;
-    align-items: center;
-    height: 85vh;
-    background-color: transparent;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
+    align-items: end;
 }
-
-.responsive-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Ajusta la imagen para que cubra el contenedor sin distorsión */
+.header-menu ul {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    margin: 0;
+    padding: 0;
 }
-
-.container-body-texto {
+.header-menu ul li {
+    width: 100%;
+    text-align: center;
+}
+.header-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+.header-menu ul li h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3em;
+}
+.header-contacto {
+    display: flex;
+    height: 10vh;
+    width: 20%;
+    justify-content: end;
+    align-items: end;
+    padding-right: 5%;
+}
+.header-contacto button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+.header-contacto h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.1.8em;   
+}
+.inicio {
     display: flex;
     flex-direction: column;
-    justify-self: start;
-    align-items: center;
-    height: 85vh;
-    background-color:  transparent;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
-}
-
-.container-body-texto-nombre {
-    display: flex;
-    justify-self: center;
-    align-items: end;
-    height: 37.5vh;
-    background-color:  transparent;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
-}
-
-.container-body-texto-nombre h1 {
-    width: 100vw;
-    font-size: 3vw;
-    font-size: 6vh;
-    color: #FBFBFB;
-    text-align: left;
-    margin: 0;
-    padding: 1vw;  
-}
-
-.container-body-texto-titulo {
-    display: flex;
     justify-content: center;
     align-items: start;
-    height: 17.5vh;
-    background-color:  transparent;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
+    height: 70vh;
+    width: 90%;
+    background-color: #000; 
+    color: #fff;
+    padding-left: 5%;
+    padding-right: 5%;
 }
-
-.container-body-texto-titulo h2 {
-    width: 100vw;
-    font-size: 2.5vw;
-    font-size: 5vh;
-    color: #F3F4F3;
-    text-align: left;
+.inicio-saludo {
+    display: flex;
+    height: 30vh;
+    justify-content: start;
+    align-items: end; 
+}
+.inicio-saludo h2 {
     margin: 0;
-    padding: 1vw;
-    padding-right: 6vw;
+    padding: 0;
+    font-size: 2.8em;
+    color: #00ff00;
 }
-
-.container-body-texto-descripcion {
+.inicio-profesion {
     display: flex;
-    justify-content: center;
-    align-items: top;
-    height: 28vh;
-    background-color:  transparent;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
-}
-
-
-.container-body-texto-descripcion h3 {
-    width: 100vw;
-    font-size: 1.25vw;
-    font-size: 2.5vh;
-    color: #E3E6E3;
-    text-align: left;
-    margin: 0;
-    padding: 1vw;  
-}
-
-.container-body-texto-cv {
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    height: 20vh;
-    background-color:  transparent;
-    width: 50vw;
-}
-
-/* Estilo para la parte derecha del encabezado */
-.container-body-texto-cv a {
-    background-color: #00ff00; /* Color de fondo del botón */
-    color: #002000; /* Color del texto del botón */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    align-content: center;
-    padding: 1vh 2vw; /* Espaciado interno del botón */
-    border-radius: .5vw; /* Bordes redondeados del botón */
-    font-size: 1.5vw; /* Ajusta el tamaño de la fuente del botón */
-    font-weight: bold;
-    height: 4vh;
-    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transición suave */
-}
-
-.container-body-texto-cv a:hover {
-    transform: scale(1.1); /* Agranda ligeramente el botón al pasar el ratón */
-}
-.container-footer {
-    display: flex;
-    justify-self: start;
-    align-items: center;
     height: 10vh;
-    background-color: yellow;
-    width: 100vw; /* Add this line to make the div cover the entire screen width */
-}
-
-@media (max-width: 840px) {
-    .container-body {
-        flex-direction: column;
-        height: 90vh; /* Cambia la dirección del flex a columna */
-    }
-
-    .container-body-imagen {
-        width: 100vw; /* Cada contenedor cubre todo el ancho de la pantalla */
-        height: 45vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
-    }
-    .container-body-texto {
-        width: 100vw; /* Cada contenedor cubre todo el ancho de la pantalla */
-        height: 45vh; /* Cada contenedor cubre la mitad de la altura de la pantalla */
-    }
-    .container-body-texto-nombre {
-        height: 12.5vh;
-        justify-self: center;
-        align-items: center;
-        width: 100vw; /* Add this line to make the div cover the entire screen width */
-    }
-    .container-body-texto-titulo {
-        height: 10vh;
-        width: 100vw; /* Add this line to make the div cover the entire screen width */
-        align-items: center;
-    }
-    .container-body-texto-descripcion {
-        height: 15vh;
-        width: 100vw;
-        align-items: center; /* Add this line to make the div cover the entire screen width */
-    }
-    .container-body-texto-cv {
-        height: 7.5vh;
-        width: 100vw;
-        align-items: center; /* Add this line to make the div cover the entire screen width */
-    }
-    .container-body-texto-nombre h1 {
-        text-align: center;
-        font-size: 2.5vw;
-        font-size: 5vh;
-    }
-    .container-body-texto-titulo h2 {
-        text-align: center;
-        font-size: 2vw;
-        font-size: 4vh;
-    }
-    .container-body-texto-descripcion h3 {
-        text-align: center;
-        font-size: 1vw;
-        font-size: 2vh;
-    }
-    .container-body-texto-cv a {
-        font-size: 1vw;
-        font-size: 2vh;
-    }
-
-}
-/* Estilos generales para el contenedor del encabezado */
-.container-head {
-    display: flex;
-    justify-self: start;
+    justify-content: start;
     align-items: center;
-    height: 15vh;
-    background-color: transparent;
-    width: 100vw; /* Hacer que el div cubra el ancho completo de la pantalla */
-    
 }
-.container-head  a{
-    text-decoration: none;
-    
-}
-
-/* Estilo para la parte izquierda del encabezado */
-.container-head-left {
-    width: 25vw;
-    font-size: 1.5vw;
-    font-size: 3vh;
-    
-    color: #00ff00;
-    text-align: left;
+.inicio-profesion h1 {
     margin: 0;
-    padding: 5vw;
+    padding: 0;
+    font-size: 5.6em;
 }
-
-.container-head-left-inicio {
-    width: 25vw;
-    font-size: 2vw;
-    font-size: 4vh;
-    font-weight: bold;
-    color: #00ff00;
-    text-align: left;
+.inicio-descripcion {
+    display: flex;
+    height: 25vh;
+    justify-content: start;
+    align-items: start;
+    padding-top: 3%;
+}
+.inicio-descripcion h2 {
     margin: 0;
-    padding: 5vw;
+    padding: 0;
+    font-size: 2.8em;
 }
-.container-head-right{
-    width: 25vw;
-    text-align: left;
+.proyectos {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 95vh;
+    width: 90%;
+    background-color: #000;
+    color: #fff;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+.proyectos-titulo {
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+}
+
+.proyectos-titulo h2{
     margin: 0;
-    padding: 5vw;
+    padding: 0;
+    font-size: 2.8em;
 }
 
-
-/* Estilo para la parte derecha del encabezado */
-.container-head-right a {
-    display: inline-block; /* Permite aplicar padding y otras propiedades de botón */
-    background-color: #00ff00; /* Color de fondo del botón */
-    color: #002000; /* Color del texto del botón */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    padding: 1vh 2vw; /* Espaciado interno del botón */
-    border-radius: .5vw; /* Bordes redondeados del botón */
-    font-size: 2vw; /* Ajusta el tamaño de la fuente del botón */
-    font-weight: bold;
-    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Transición suave */
-}
-
-.container-head-right a:hover {
-    transform: scale(1.1); /* Agranda ligeramente el botón al pasar el ratón */
-}
-
-
-
-
-
-/* Estilo para la parte central del encabezado */
-.container-head-middle {
+.proyecto_1 {
     display: flex;
     flex-direction: row;
-    width: 50vw;
-    background-color: transparent;
-    color: #00ff00;
+    height: 42vh;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+}
+.proyecto_1-imagen{
+    display: flex;
+    flex-direction: column;
+    height: 42vh;
+    width: 45%;
+    justify-content: start;
+    align-items: start;
+    
+}
+.proyecto_1-imagen-imagen{
+    display: flex;
+    height: 37vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.proyecto_1-imagen-imagen img{
+    width: 65%;
+}
+.proyecto_1-imagen-fecha{
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+}
+.proyecto_1-imagen-fecha h3{
+    font-size: 1.8em;
     margin: 0;
     padding: 0;
 }
-
-/* Estilo para la parte derecha de la parte central del encabezado */
-.container-head-middle-right {
-    width: 50vw;
-    font-size: 1.5vw;
-    font-size: 3vh;
-    font-weight: bold;
-    color: #00ff00;
-    text-align: right;
-    background-color: transparent;
+.proyecto_1-texto{
+    display: flex;
+    flex-direction: column;
+    height: 42vh;
+    width: 55%;
+    justify-content: center;
+    align-items: center;
+    
+}
+.proyecto_1-texto h2{
+    font-size: 2.2em;
     margin: 0;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
-    padding-right: 1.5vw;
-}
-
-/* Estilo para la parte izquierda de la parte central del encabezado */
-.container-head-middle-left {
-    width: 50vw;
-    font-size: 1.5vw;
-    font-size: 3vh;
-    font-weight: bold;
-    color: #00ff00;
-    background-color: transparent;
-    text-align: left;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
-    padding-left: 1.5vw;
-
-}
-
-/* Estilos para el select simulado */
-.custom-select {
-    display: none;
-
-}
-
-.select-selected {
-    background-color: transparent;
-    color: #00ff00;
-    border: 1px solid transparent;
-    padding: 10px;
-    font-size: 2.5vh;
-    font-weight: bold;
+    padding: 0;
     text-align: center;
-    cursor: pointer;
 }
 
-.select-items {
-    position: absolute;
-    background-color: transparent;
-    color: #00ff00;
-    border: 1px solid transparent;
-    text-align: center;
-    font-size: 2.5vh;
-    font-weight: bold;
+.proyecto_1-texto-titulo{
+    display: flex;
+    height: 15vh;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.proyecto_1-texto-hidden {
     display: none;
-    z-index: 99;
+    height: 27vh;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
 }
-
-.select-items a {
-    text-decoration: none;
-    color: inherit;
+.proyecto_1-texto h3{
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
 }
-
-.select-items .select-option {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.select-items .select-option:hover {
-    background-color: #008000;
-    opacity: 0.7;
-}
-
-/* Ocultar los elementos del select cuando no están activos */
-.select-hide {
-    display: none;
-}
-
-/* Mostrar el dropdown cuando se pase el ratón sobre el select */
-.custom-select:hover .select-items {
+.proyecto_1-texto:hover .proyecto_1-texto-hidden {
     display: block;
 }
-
-@media (max-width: 840px) {
-    .container-head {
-        height: 10vh;
-
-    }
-    .container-head-left {
-        font-size: 1.5vw;
-        font-size: 2.5vh;
-        padding: 3vw;
-    }
-    .container-head-right {
-        font-size: 1.5vw;
-        font-size: 2.5vh;
-        
-        text-align: right;
-    }
-    .container-head-right a {
-
-        font-size: 1vw;
-        font-size: 2vh; 
-        
-    }
-    .container-head-middle {
-        display: none;
-    }
-    .custom-select {
-        position: relative;
-        display: inline-block;
-        width: 50vw; /* Ajustar el ancho según sea necesario */
-    }
-    .container-head-left-inicio {
-        font-size: 2vw;
-        font-size: 4vh;
- 
-    }
-    .container-body-texto-titulo h2 {
-  
-        padding-right: 0vw;
-    }
-    
+.proyecto_2 {
+    display: flex;
+    flex-direction: row;
+    height: 42vh;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
 }
-
-
-.container-body-estudios {
+.proyecto_2-texto{
     display: flex;
     flex-direction: column;
+    height: 42vh;
+    width: 55%;
     justify-content: center;
     align-items: center;
+    
+}
+.proyecto_2-texto h2{
+    font-size: 2.2em;
+    margin: 0;
+    padding: 0;
+}
+.proyecto_2-texto-titulo{
+    display: flex;
+    height: 15vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+.proyecto_2-texto-hidden {
+    display: none;
+    height: 27vh;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+.proyecto_2-texto h3{
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+.proyecto_2-texto:hover .proyecto_2-texto-hidden {
+    display: block;
+}
+.proyecto_2-imagen{
+    display: flex;
+    flex-direction: column;
+    height: 42vh;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    
+}
+.proyecto_2-imagen-imagen{
+    display: flex;
+    height: 37vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.proyecto_2-imagen-imagen img{
+    width: 65%;
+}
+.proyecto_2-imagen-fecha h3{
+    font-size: 1.8em;
+    margin: 0;
+    padding: 0;
+}
+.proyecto_2-imagen-fecha{
+    display: flex;
+    height: 5vh;
+    width: 100%;
+    justify-content: end;
+    align-items: end;
+}
+.linea {
+    display: flex;
+    height: 1vh;
+    width: 100%;
+    background-color: #00ff00;
+}
+.contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
     height: 85vh;
-    background-color: #002000;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
-}	
-
-
-.container-body-estudios-educacion {
+    width: 90%;
+    background-color: #000;
+    color: #fff;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.contacto-titulo {
     display: flex;
+    height: 20vh;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+}
+.contacto-titulo h2{
+    margin: 0;
+    padding: 0;
+    font-size: 2.8em;
+}
+.contacto-contenido{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+}
+.contacto-contenido-contacto {
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    width: 100%;
+    align-items: center;
+}
+.contacto-contenido-contacto h3{
+    margin: 0;
+    padding: 0;
+    font-size: 2.3em;
+}
+.contacto-contenido-contacto img{
+ height: 45%;
+ padding-right: 1%;
+}
+.contacto-mensaje {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    background-color:  transparent;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
-    
+
 }
-.container-body-estudios-educacion-contenido {
+
+.contacto-mensaje h3{
+    margin: 0;
+    padding: 0;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 37.5vh;
-    background-color: #00ff00;
-    width: 45vw; /* Add this line to make the div cover the entire screen width */
-    border-radius: 10px;
-    margin-left: 2.5vw;
-    
-
+    height: 15vh;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
 }
-
-    .container-body-estudios-educacion-contenido-titulo{
+.footer-fin {
     display: flex;
+    height: 14vh;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    height: 7.5vh;
-    width: 45vw;
-    
-    }
-
-    .container-body-estudios-educacion-contenido-titulo h1 {
-        width: 100vw;
-        font-size: 2vw;
-        font-size: 4vh;
-        color: #002000;
-        text-align: center;
-        margin: 0;
-        padding: 1vw;  
-    }
-    .container-body-estudios-educacion-contenido-cuerpo{
-        display: flex;
-        
-        flex-direction: column;
-        align-items: center;
-        height: 30vh;
-        width: 45vw;
-        overflow: auto;
-        }
-        /* Personaliza la barra de desplazamiento */
-        .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar {
-            width: 2vw;
-        }
-
-        .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar-track {
-            
-            background-color: #00ff00; /* Color de fondo de la barra de desplazamiento */
-        }
-
-        .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar-thumb {
-            background:#00ff00 url('marciano.webp') no-repeat;
-            background-size:100% auto;  
-            height:50%; 
-            background-position: center; /* Centra el fondo dentro del thumb */
-            
-        }
-
-        .container-body-estudios-educacion-contenido-cuerpo::-webkit-scrollbar-thumb:hover {
-            background:#00ff00 url('marciano2.webp') no-repeat;
-            background-size:100% auto;  
-            height:50%; 
-            background-position: center; /* Centra el fondo dentro del thumb */
-            
-        }
-
-
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor {
-            display: flex;
-            
-            flex-direction: column;
-            height: 100vh;
-            width: 40vw;
-            background-color: #00df00;
-            border-radius: 10px;
-            margin: .5vw .5vw;
-           
-        }
-
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor-titulo {
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            height: auto;
-            width: 40vw;
-
-        }
-
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor img {
-            width: auto;
-            height: 6vh;
-            margin: 0vh 1vw;
-        }
-
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor h2 {
-            width: 37vw;
-            font-size: 1.5vw;
-            font-size: 3vh;
-            color: #002000;
-            align-items: center;
-            
-            justify-content: center;
-            
-            
-            
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor-cuerpo {
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: start;
-            height: auto;
-            width: 40vw;
-
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor h3 {
-            width: 39vw;
-            font-size: 1.2vw;
-            font-size: 2.4vh;
-            color: #002000;
-            text-align: start;
-            margin: 0;
-            padding: .5vh 1vw;  
-            
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor h4 {
-            width: 39vw;
-            font-size: 1.2vw;
-            font-size: 2.4vh;
-            color: #002000;
-            text-align: start;
-            margin: 0;
-            padding: .5vh 1vw;  
-            
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor p {
-            width: 39vw;
-            font-size: 1vw;
-            font-size: 2vh;
-            color: #002000;
-            text-align: start;
-            margin: 0;
-            padding: .5vh 1vw;  
-            padding-bottom: 1.5vh;
-            
-        }
-
-
-
-.container-body-estudios-certificaciones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    background-color:  #002000;
-    width: 50vw; /* Add this line to make the div cover the entire screen width */
-} 
-.container-body-estudios-certificaciones-contenido {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 37.5vh;
-    background-color: #00ff00;
-    width: 45vw; /* Add this line to make the div cover the entire screen width */
-    border-radius: 10px;
-    margin-left: 2.5vw;
-    
-
+    text-align: center;
 }
-.container-body-estudios-certificaciones-contenido-titulo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 7.5vh;
-    width: 45vw;
+footer h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
     
-    }
-
-    .container-body-estudios-certificaciones-contenido-titulo h1 {
-        width: 100vw;
-        font-size: 2vw;
-        font-size: 4vh;
-        color: #002000;
-        text-align: center;
-        margin: 0;
-        padding: 1vw;  
-    }
-    .container-body-estudios-certificaciones-contenido-cuerpo{
-        display: flex;
-        
-        flex-direction: column;
-        align-items: center;
-        height: 30vh;
-        width: 45vw;
-        
-        overflow: auto;
-        }
-                /* Personaliza la barra de desplazamiento */
-        .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar {
-            width: 2vw; /* Ancho de la barra de desplazamiento */
-            
-            
-        }
-
-        .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar-track {
-            background-color: #00ff00; /* Color de fondo de la barra de desplazamiento */
-        }
-
-        .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar-thumb {
-            background:#00ff00 url('marciano.webp') no-repeat;
-            background-size:100% auto;
-            height:50%; 
-            background-position: center; /* Centra el fondo dentro del thumb */
-
-            
-        }
-
-        .container-body-estudios-certificaciones-contenido-cuerpo::-webkit-scrollbar-thumb:hover {
-            background:#00ff00 url('marciano2.webp') no-repeat;
-            background-size:100% auto;  
-            height:50%; 
-            background-position: center; /* Centra el fondo dentro del thumb */
-            
-        }
-
-
-    .container-body-tecnologias {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 85vh;
-        background-color: #002000;
-        width: 50vw; /* Add this line to make the div cover the entire screen width */
-    }
-
-    .container-body-tecnologias-contenido{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 80vh;
-        width: 45vw;
-        margin-right: 2.5vw;
-        background-color: #00ff00;
-        border-radius: 10px;
-        overflow: hidden; /* Esconde cualquier contenido que se salga del contenedor */
-    }
-    .container-body-tecnologias-contenido-titulo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 10vh;
-        width: 45vw;
-        background-color: transparent;
-    }
-    .container-body-tecnologias-contenido-titulo h1 {
-        font-size: 2vw;
-        font-size: 4vh;
-    }
-    .container-body-tecnologias-contenido-cuerpo {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 70vh;
-        width: 45vw;
-        overflow: auto;
-        background-color: transparent;
-    }
-    .container-body-tecnologias-contenido-cuerpo-contenedor {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 23.33vh;
-        width: 45vw;
-        background-color: transparent;
-        width: 100%; /* O el ancho que desees para el contenedor visible */
-        overflow: hidden; /* Esconde cualquier contenido que se salga del contenedor */
-        position: relative; 
-        
-        
-    }
-    .container-body-tecnologias-contenido-cuerpo-titulo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 8.33vh;
-        width: 45vw;
-        background-color: #00df00;
-    }
-    .container-body-tecnologias-contenido-cuerpo-titulo h2{
-        font-size: 1.5vw;
-        font-size: 3vh;
-    }
-    .container-body-tecnologias-contenido-cuerpo-logos {
-        display: flex;
-        overflow: hidden;
-        width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
-        height: 15vh;
-
-    
-    }
-
-    .container-body-tecnologias-contenido-cuerpo-logos-grupos {
-        display: flex;
-        width: 90vw;
-        height: 15vh;
-        animation: move 12s linear infinite; /* Animación de desplazamiento */
-    }
-
-    .container-body-tecnologias-contenido-cuerpo-logos-group {
-        display: flex;
-        width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
-        height: 15vh;
-        align-items: center;
-    }
-
-
-    .container-body-tecnologias-contenido-cuerpo-logos img{
-        width: 6vw;
-        display: flex;
-        justify-content: center;
-        height: auto;
-        padding: 0vh 2.5vw;
-    }
-
-    @keyframes move {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-    .container-body-tecnologias-contenido-cuerpo-logos-reverse {
-        display: flex;
-        overflow: hidden;
-        width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
-        height: 15vh;
-
-    
-    }    .container-body-tecnologias-contenido-cuerpo-logos-grupos-reverse {
-        display: flex;
-        width: 90vw;
-        height: 15vh;
-        animation: movereverse 12s linear infinite; /* Animación de desplazamiento */
-    }
-    .container-body-tecnologias-contenido-cuerpo-logos-group-reverse {
-        display: flex;
-        width: 45vw; /* Duplicar el ancho del contenedor para permitir el desplazamiento */
-        height: 15vh;
-        align-items: center;
-    }
-    .container-body-tecnologias-contenido-cuerpo-logos-reverse img{
-        width: 6vw;
-        display: flex;
-        justify-content: center;
-        height: auto;
-        padding: 0vh 2.5vw;
-    }
-    @keyframes movereverse {
-        100% {
-            transform: translateX(0);
-        }
-        0% {
-            transform: translateX(-50%);
-        }
-    }
-
-    @media (max-width: 840px) {
-        .container-body-estudios {
-            height: 45vh;
-            width: 100vw;
-        }
-        .container-body-estudios-educacion {
-            height: auto;
-            background-color:  transparent;
-            width: 90vw; /* Add this line to make the div cover the entire screen width */
-            margin: 1vh;
-        }  
-        .container-body-estudios-educacion-contenido {
-            height: auto;
-            width: 90vw; /* Add this line to make the div cover the entire screen width */
-            margin-left: 0vw;
-        }
-        .container-body-estudios-educacion-contenido-titulo{
-            height: 5vh;
-            width: 90vw;
-      
-            }
-        .container-body-estudios-educacion-contenido-titulo h1 {
-            font-size: 1.5vw;
-            font-size: 3vh;
-        }
-        .container-body-estudios-educacion-contenido-cuerpo{
-            height: 32vh;
-            width: 90vw;
-        }
-    	.container-body-estudios-educacion-contenido-cuerpo-contenedor{
-            height: 100vh;
-            width: 85vw;
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor-titulo {
-            width: 85vw;
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor img {
-            height: 4vh;
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor h2 {
-            width: 85vw;
-            font-size: 1.2vw;
-            font-size: 2.4vh;
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor-cuerpo {
-            height: auto;
-            width: 85vw;
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor h3 {
-            width: 84vw;
-            font-size: 1vw;
-            font-size: 2vh;   
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor h4 {
-            width: 84vw;
-            font-size: 1vw;
-            font-size: 2vh;
-        }
-        .container-body-estudios-educacion-contenido-cuerpo-contenedor p {
-            width: 84vw;
-            font-size: 1vw;
-            font-size: 2vh;
-        }
-        .container-body-estudios-certificaciones {
-            height: auto;
-            width: 90vw;
-            margin: 1vh;
-        }
-        .container-body-estudios-certificaciones-contenido {
-            height: auto;
-            width: 90vw; /* Add this line to make the div cover the entire screen width */
-            margin-left: 0vw;
-        }
-        .container-body-estudios-certificaciones-contenido-titulo{
-            height: 5vh;
-            width: 90vw;
-        }
-        .container-body-estudios-certificaciones-contenido-titulo h1 {
-            font-size: 1.5vw;
-            font-size: 3vh;
-        }
-        .container-body-estudios-certificaciones-contenido-cuerpo{
-            height: 32vh;
-            width: 90vw;
-        }
-        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor{
-            height: 100vh;
-            width: 85vw;
-        }
-        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor-titulo {
-            width: 85vw;
-        }
-        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor img {
-            height: 4vh;
-        }
-        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor h2 {
-            width: 85vw;
-            font-size: 1.2vw;
-            font-size: 2.4vh;
-        }
-        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor-cuerpo {
-            height: auto;
-            width: 85vw;
-        }
-        .container-body-estudios-certificaciones-contenido-cuerpo-contenedor h3 {
-            width: 84vw;
-            font-size: 1vw;
-            font-size: 2vh;   
-        }
-        .container-body-tecnologias {
-            height: 45vh;
-            width: 100vw;
-        }
-        .container-body-tecnologias-contenido{
-            height: 42.5vh;
-            width: 90vw;
-            margin-right: 0vw;
-        }
-        .container-body-tecnologias-contenido-titulo {
-            height: 5vh;
-            width: 90vw;
-        }
-        .container-body-tecnologias-contenido-titulo h1 {
-            font-size: 1.5vw;
-            font-size: 3vh;
-        }
-        .container-body-tecnologias-contenido-cuerpo {
-            height: 37.5vh;
-            width: 90vw;
-        }
-        .container-body-tecnologias-contenido-cuerpo-contenedor {
-            height: 12.5vh;
-            width: 90vw;
-        }
-        .container-body-tecnologias-contenido-cuerpo-titulo {
-            height: 4.16vh;
-            width: 90vw;
-        }
-        .container-body-tecnologias-contenido-cuerpo-titulo h2{
-            font-size: 1.2vw;
-            font-size: 2.4vh;
-        }
-        .container-body-tecnologias-contenido-cuerpo-logos {
-            height: 8.34vh;
-            width: 90vw;
-        }
-        .container-body-tecnologias-contenido-cuerpo-logos-grupos {
-            width: 180vw;
-            height: 8.34vh;
-        }
-        .container-body-tecnologias-contenido-cuerpo-logos-group {
-            width: 90vw;
-            height: 8.34vh;
-        }
-        .container-body-tecnologias-contenido-cuerpo-logos-group img{
-            width: 7vw;
-            padding: 0vh 8vw;
-        }
-                .container-body-tecnologias-contenido-cuerpo-logos-reverse {
-            height: 8.34vh;
-            width: 90vw;
-        }
-        .container-body-tecnologias-contenido-cuerpo-logos-grupos-reverse {
-            width: 180vw;
-            height: 8.34vh;
-        }
-        .container-body-tecnologias-contenido-cuerpo-logos-group-reverse {
-            width: 90vw;
-            height: 8.34vh;
-        }
-        .container-body-tecnologias-contenido-cuerpo-logos-group-reverse img {
-            width: 7vw;
-            padding: 0vh 8vw;
-        }
-       
- 
-            .container-body-estudios-certificaciones-contenido-cuerpo {
-                display: none;
-            }
-            .container-body-estudios-educacion-contenido-cuerpo {
-                display: flex;
-            }
-        
-        
-
-    }
+}
+footer a {
+    text-decoration: none;
+    color: #fff;
+}

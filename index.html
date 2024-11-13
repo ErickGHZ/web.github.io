@@ -1,64 +1,117 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erick Gutierrez</title>
-    <meta name="description" content="Erick Gutierrez Hernandez es un estudiante apasionado por el desarrollo de software, con experiencia en varios proyectos. Se dedica a la creación de sistemas y está emocionado por seguir aprendiendo y explorando diferentes áreas del desarrollo.">
-    <meta name="keywords" content="Erick Gutierrez Hernandez, desarrollo de software, ingeniero de software, proyectos de software, sistemas, desarrollo de sistemas, estudiante de programación, tecnología, creación de software, ingeniería en software, desarrolador">
-
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
-    <div id="loader" class="loader">
-        <div class="spinner"></div>
-    </div>
-
-    <div class="container">
-        <!-- Header siempre visible -->
-        <div class="container-head">
-            <a class="container-head-left-inicio" href="/index.html" >Erick</a>
-            <div class="container-head-middle">
-                <a class="container-head-middle-right" href="/me.html" >Sobre mí</a>
-                <a class="container-head-middle-left" href="#proyectos">Proyectos</a>
+    <header id="inicio">
+        <div class="header-inicio">
+            <h2>Erick Gutierrez</h2>
+        </div>
+        <div class="header-menu">
+            <ul>
+                <li><a href="#proyectos"><h3>Proyectos</h3></a></li>
+                <li><a href="#contacto"><h3>Contacto</h3></a></li>
+            </ul>
+        </div>
+        <div class="header-contacto">
+            <button type="button"><h3>Contactame</h3></button>
+        </div>
+    </header>
+    <main>
+        <div class="inicio" >
+            <div class="inicio-saludo">
+                <h2>Hola, mi nombre es Erick Gutierrez</h2>
             </div>
-            <div class="custom-select">
-                <div class="select-selected">Sobre mí</div>
-                <div class="select-items select-hide">
-                    <a href="/me.html"><div class="select-option"  >Sobre mí</div></a> 
-                    <a href="#proyectos"></a><div class="select-option" >Proyectos</div></a> 
+            <div class="inicio-profesion">
+                <h1>Desarrollador de Software</h1>
+            </div>
+            <div class="inicio-descripcion">
+                <h2>Me dedico a la creación de sistemas y estoy emocionado por seguir aprendiendo y explorando diferentes áreas del desarrollo.</h2>
+            </div>
+            
+        </div>
+        <div class="proyectos" id="proyectos">
+            <div class="proyectos-titulo">
+                <h2>Proyectos</h2>
+            </div>
+            <div class="proyecto_1">
+                <div class="proyecto_1-imagen">
+                    <div class="proyecto_1-imagen-imagen">
+                        <img src="/static/img/imagenproyecto_1.webp" alt="imagenproyecto_1">
+                    </div>
+                    <div class="proyecto_1-imagen-fecha">
+                        <h3>2024</h3> 
+                    </div>
+                </div>
+                <div class="proyecto_1-texto">
+                    <div class="proyecto_1-texto-titulo">
+                        <h2>Aplicación Web para Distribuidora Medica Victoria</h2>
+                    </div>
+                    <div class="proyecto_1-texto-hidden">
+                        <h3>La aplicación web de Distribuidora Médica Victoria fue creada para mostrar su catálogo de productos médicos y facilitar el contacto con los clientes. Su propósito es aumentar la visibilidad de la empresa, mejorar la atención al cliente, y servir como una herramienta de apoyo para las ventas, ofreciendo información clara y accesible sobre sus productos y servicios.</h3>
+                    </div>
                 </div>
             </div>
-            <div class="container-head-right">
-                <a href="#contacto">Contacto</a>
+            <div class="linea">
+
+            </div>
+            <div class="proyecto_2">
+                <div class="proyecto_2-texto">
+                    <div class="proyecto_2-texto-titulo">
+                        <h2>InvEz</h2>
+                    </div>
+                    <div class="proyecto_2-texto-hidden">
+                        <h3>InvEz es una aplicación móvil desarrollada para Distribuidora Médica Victoria que facilita el conteo de inventario. Su propósito es simplificar y agilizar el proceso de gestión de stock, permitiendo a los empleados escanear productos, registrar cantidades, reduciendo errores y mejorando la eficiencia en el control de existencias.</h3>
+                    </div>
+                </div>
+                <div class="proyecto_2-imagen">
+                    <div class="proyecto_2-imagen-imagen">
+                        <img src="/static/img/imagenproyecto_2.webp" alt="imagenproyecto_2">
+                    </div>
+                    <div class="proyecto_2-imagen-fecha">
+                        <h3>2024</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="linea">
+
             </div>
         </div>
-
-        <!-- Contenido dinámico del body -->
-        <div class="container-body" id="container-body">
-            <div class="container-body-imagen">
-                <video autoplay loop muted playsinline class="responsive-img">
-                    <source src="perfil.webm" type="video/webm" />
-                </video>
+        <div class="contacto" id="contacto">
+            <div class="contacto-titulo">
+                <h2>Contacto</h2>
+            </div>  
+            <div class="contacto-contenido">
+                <div class="contacto-contenido-contacto">
+                    <img src="/static/img/whatsapp.webp" alt="logowhatsapp">
+                    <h3>+52 56 1701 7418</h3>
+                </div>
+                <div class="contacto-contenido-contacto">
+                    <img src="/static/img/email.webp" alt="logowhatsapp">
+                    <h3>egh140704@gmail.com</h3>
+                </div>
+                <div class="contacto-contenido-contacto">
+                    <img src="/static/img/linkedin.webp" alt="logolinkedin">
+                    <h3>Erick Gutierrez Hernandez</h3>
+                </div>
             </div>
-            <div class="container-body-texto">
-                <div class="container-body-texto-nombre">
-                    <h1>Erick Gutierrez Hernandez</h1>
-                </div>
-                <div class="container-body-texto-titulo"> 
-                    <h2>Ingeniero en Desarrollo de Software</h2>
-                </div>
-                <div class="container-body-texto-descripcion">            
-                    <h3>Soy un estudiante apasionado por el desarrollo de software, con experiencia en varios proyectos. <br> Me dedico a la creación de sistemas y estoy emocionado por seguir aprendiendo y explorando diferentes áreas del desarrollo.</h3>
-                </div>
-                <div class="container-body-texto-cv">
-                    <a href="cv.pdf" download="cv.pdf">Descargar CV</a>
-                </div>
+            <div class="contacto-mensaje">
+                <h3>01001110  01101111  00100000  01110011  01100101  00100000  01110001  01110101  01100101  00100000  01110000  01101111  01101110  01100101  01110010  00100000  01100001  01110001  01110101  11101101  00101110  </h3>
+
             </div>
         </div>
-    </div>    
+    </main>
+    <footer>
+        <div class="linea">
 
-    <script src="script.js"></script>
+        </div>
+        <div class="footer-fin">
+            <h6><a href="#inicio">Erick Gutierrez</a></h6>
+        </div>
+    </footer>
 </body>
 </html>
