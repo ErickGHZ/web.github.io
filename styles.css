@@ -2,8 +2,10 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
+    background-color: #000;
 
 }
+
 header {    
     display: flex;
     flex-direction: row;
@@ -11,6 +13,21 @@ header {
     width: 100%;
     background-color: #000;
     color: #fff;
+}
+/* Inicializa el header fuera de la vista */
+#header {
+    position: relative; /* Asegura que puedas animarlo sin afectar su posición dentro del flujo */
+    transform: translateY(-100px); /* Empieza 100px arriba */
+    opacity: 0; /* Oculta el header inicialmente */
+    animation: slideDown 1s ease-out forwards; /* Define la animación */
+}
+
+/* Define la animación */
+@keyframes slideDown {
+    to {
+        transform: translateY(0); /* Termina en su posición original */
+        opacity: 1; /* Se hace visible */
+    }
 }
 .header-inicio {
     display: flex;
@@ -85,7 +102,67 @@ header {
     color: #fff;
     padding-left: 5%;
     padding-right: 5%;
+    position: relative;
+    overflow: hidden;
 }
+.inicio-saludo,
+.inicio-profesion,
+.inicio-descripcion {
+    opacity: 0;
+    position: relative;
+}
+
+/* Animación para el saludo: entra desde la izquierda */
+.inicio-saludo {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Animación para la profesión: entra desde la derecha */
+.inicio-profesion {
+    animation: slideInRight 1s ease-out forwards;
+    animation-delay: 0.5s; /* Inicia después de 0.5s */
+}
+
+/* Animación para la descripción: entra desde abajo */
+.inicio-descripcion {
+    animation: slideInUp 1s ease-out forwards;
+    animation-delay: 1s; /* Inicia después de 1s */
+}
+
+/* Definiciones de animaciones */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%); /* Comienza fuera de la vista a la izquierda */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* Llega a su posición original */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%); /* Comienza fuera de la vista a la derecha */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* Llega a su posición original */
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%); /* Comienza fuera de la vista abajo */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* Llega a su posición original */
+        opacity: 1;
+    }
+}
+
 .inicio-saludo {
     display: flex;
     height: 30vh;
@@ -134,12 +211,22 @@ header {
     padding-right: 5%;
 
 }
+
+
+
+
 .proyectos-titulo {
     display: flex;
     height: 10vh;
     width: 100%;
     justify-content: start;
     align-items: center;
+    opacity: 0;
+    position: relative;
+}
+.proyectos-titulo {
+    animation: slideInLeft 1s ease-out forwards;
+    animation-delay: 1.1s;
 }
 
 .proyectos-titulo h2{
@@ -172,8 +259,21 @@ header {
     justify-content: center;
     align-items: center;
 }
-.proyecto_1-imagen-imagen img{
+
+.proyecto_1-imagen-imagen img {
     width: 65%;
+    opacity: 0; /* Oculta la imagen inicialmente */
+    transform: translateX(-100%); /* Comienza fuera de la vista a la izquierda */
+    animation: slideInImage 1s ease-out forwards; /* Aplica la animación */
+    animation-delay: 1.45s; /* Ajusta el tiempo para que coincida con otras animaciones */
+}
+
+/* Definición de la animación */
+@keyframes slideInImage {
+    to {
+        transform: translateX(0); /* Llega a su posición original */
+        opacity: 1; /* Se hace visible */
+    }
 }
 .proyecto_1-imagen-fecha{
     display: flex;
@@ -211,22 +311,63 @@ header {
     align-items: center;
     
 }
-
 .proyecto_1-texto-hidden {
-    display: none;
-    height: 27vh;
-    justify-content: center;
-    align-items: center;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(-20px); /* Mueve hacia arriba para el efecto */
+    max-height: 0; /* Oculta el contenido */
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease; /* Animaciones suaves */
     text-align: justify;
 }
+
 .proyecto_1-texto h3{
     font-size: 1.5em;
     margin: 0;
     padding: 0;
-}
+    }
+    
+
 .proyecto_1-texto:hover .proyecto_1-texto-hidden {
-    display: block;
+    opacity: 1; /* Aparece gradualmente */
+    transform: translateY(0); /* Se posiciona en su lugar */
+    max-height: 27vh; /* Expande la altura */
 }
+/* Animación desde la izquierda */
+.animar-izquierda {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s ease-out;
+}
+
+.animar-izquierda.activa {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animación desde la derecha */
+.animar-derecha {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 1s ease-out;
+}
+
+.animar-derecha.activa {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animar-debajo {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-out;
+}
+
+.animar-debajo.activa {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .proyecto_2 {
     display: flex;
     flex-direction: row;
@@ -258,19 +399,25 @@ header {
     
 }
 .proyecto_2-texto-hidden {
-    display: none;
-    height: 27vh;
-    justify-content: center;
-    align-items: center;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(-20px); /* Mueve hacia arriba para el efecto */
+    max-height: 0; /* Oculta el contenido */
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease; /* Animaciones suaves */
     text-align: justify;
 }
+
 .proyecto_2-texto h3{
     font-size: 1.5em;
     margin: 0;
     padding: 0;
-}
+    }
+    
+
 .proyecto_2-texto:hover .proyecto_2-texto-hidden {
-    display: block;
+    opacity: 1; /* Aparece gradualmente */
+    transform: translateY(0); /* Se posiciona en su lugar */
+    max-height: 27vh; /* Expande la altura */
 }
 .proyecto_2-imagen{
     display: flex;

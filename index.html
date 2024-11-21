@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header id="inicio">
+    <header id="header">
         <div class="header-inicio">
             <h2>Erick Gutierrez</h2>
         </div>
@@ -43,12 +43,12 @@
                     <div class="proyecto_1-imagen-imagen">
                         <img src="/static/img/imagenproyecto_1.webp" alt="imagenproyecto_1">
                     </div>
-                    <div class="proyecto_1-imagen-fecha">
+                    <div class="proyecto_1-imagen-fecha animar-izquierda">
                         <h3>2024</h3> 
                     </div>
                 </div>
-                <div class="proyecto_1-texto">
-                    <div class="proyecto_1-texto-titulo">
+                <div class="proyecto_1-texto ">
+                    <div class="proyecto_1-texto-titulo animar-derecha ">
                         <h2>Aplicación Web para Distribuidora Medica Victoria</h2>
                     </div>
                     <div class="proyecto_1-texto-hidden">
@@ -56,12 +56,12 @@
                     </div>
                 </div>
             </div>
-            <div class="linea">
+            <div class="linea animar-debajo">
 
             </div>
             <div class="proyecto_2">
                 <div class="proyecto_2-texto">
-                    <div class="proyecto_2-texto-titulo">
+                    <div class="proyecto_2-texto-titulo animar-izquierda">
                         <h2>InvEz</h2>
                     </div>
                     <div class="proyecto_2-texto-hidden">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="proyecto_2-imagen">
-                    <div class="proyecto_2-imagen-imagen">
+                    <div class="proyecto_2-imagen-imagen animar-derecha">
                         <img src="/static/img/imagenproyecto_2.webp" alt="imagenproyecto_2">
                     </div>
                     <div class="proyecto_2-imagen-fecha">
@@ -114,4 +114,24 @@
         </div>
     </footer>
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const elementosAnimar = document.querySelectorAll('.animar-izquierda, .animar-derecha, .animar-debajo');
+
+    const activarAnimacion = () => {
+        elementosAnimar.forEach(elemento => {
+            const posicionElemento = elemento.getBoundingClientRect().top;
+            const alturaPantalla = window.innerHeight;
+
+            if (posicionElemento <= alturaPantalla - 50) {
+                elemento.classList.add('activa');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', activarAnimacion);
+    activarAnimacion(); // Para activar en caso de que ya estén visibles al cargar.
+});
+
+</script>
 </html>
