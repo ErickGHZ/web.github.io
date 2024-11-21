@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="contacto" id="contacto">
-            <div class="contacto-titulo animar-debajo">
+            <div class="contacto-titulo animar-izquierda">
                 <h2>Contacto</h2>
             </div>  
             <div class="contacto-contenido">
@@ -99,16 +99,16 @@
                     <h3 class="animar-derecha">Erick Gutierrez Hernandez</h3>
                 </div>
             </div>
-            <div class="contacto-mensaje ">
-                <h3>01001110  01101111  00100000  01110011  01100101  00100000  01110001  01110101  01100101  00100000  01110000  01101111  01101110  01100101  01110010  00100000  01100001  01110001  01110101  11101101  00101110  </h3>
+            <div class="contacto-mensaje">
+                <h3 id="texto-tipeo"></h3>
             </div>
         </div>
     </main>
     <footer>
-        <div class="linea">
+        <div class="linea animar-debajo">
 
         </div>
-        <div class="footer-fin">
+        <div class="footer-fin animar-debajo">
             <h6><a href="#inicio">Erick Gutierrez</a></h6>
         </div>
     </footer>
@@ -132,5 +132,42 @@ document.addEventListener("DOMContentLoaded", () => {
     activarAnimacion(); // Para activar en caso de que ya estén visibles al cargar.
 });
 
+// Texto en binario
+const texto = "01001110 01101111 00100000 01110011 01100101 00100000 01110001 01110101 01100101 00100000 01110000 01101111 01101110 01100101 01110010 00100000 01100001 01110001 01110101 11101101 00101110";
+
+// Referencia al elemento donde se mostrará el texto
+const elementoTexto = document.getElementById("texto-tipeo");
+
+// Función para mostrar el texto letra por letra
+function typeText(texto, elemento, delay = 40) {
+    let index = 0;
+    function escribir() {
+        if (index < texto.length) {
+            elemento.textContent += texto[index];
+            index++;
+            setTimeout(escribir, delay);
+        }
+    }
+    escribir();
+}
+
+// Verificar si el texto está visible en el viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+}
+
+// Ejecutar el efecto al hacer scroll y detectar si está visible
+window.addEventListener("scroll", () => {
+    if (isInViewport(elementoTexto) && elementoTexto.textContent === "") {
+        typeText(texto, elementoTexto);
+    }
+});
+
+// Por si ya está en la vista al cargar la página
+if (isInViewport(elementoTexto)) {
+    typeText(texto, elementoTexto);
+}
+</script>
 </script>
 </html>
