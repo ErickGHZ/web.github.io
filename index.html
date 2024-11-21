@@ -72,36 +72,35 @@
                     <div class="proyecto_2-imagen-imagen animar-derecha">
                         <img src="/static/img/imagenproyecto_2.webp" alt="imagenproyecto_2">
                     </div>
-                    <div class="proyecto_2-imagen-fecha">
+                    <div class="proyecto_2-imagen-fecha animar-derecha">
                         <h3>2024</h3>
                     </div>
                 </div>
             </div>
-            <div class="linea">
+            <div class="linea animar-debajo">
 
             </div>
         </div>
         <div class="contacto" id="contacto">
-            <div class="contacto-titulo">
+            <div class="contacto-titulo animar-debajo">
                 <h2>Contacto</h2>
             </div>  
             <div class="contacto-contenido">
                 <div class="contacto-contenido-contacto">
-                    <img src="/static/img/whatsapp.webp" alt="logowhatsapp">
-                    <h3>+52 56 1701 7418</h3>
+                    <img class="animar-izquierda" src="/static/img/whatsapp.webp" alt="logowhatsapp">
+                    <h3 class="animar-derecha">+52 56 1701 7418</h3>
                 </div>
                 <div class="contacto-contenido-contacto">
-                    <img src="/static/img/email.webp" alt="logowhatsapp">
-                    <h3>egh140704@gmail.com</h3>
+                    <img class="animar-izquierda" src="/static/img/email.webp" alt="logowhatsapp">
+                    <h3 class="animar-derecha">egh140704@gmail.com</h3>
                 </div>
                 <div class="contacto-contenido-contacto">
-                    <img src="/static/img/linkedin.webp" alt="logolinkedin">
-                    <h3>Erick Gutierrez Hernandez</h3>
+                    <img class="animar-izquierda" src="/static/img/linkedin.webp" alt="logolinkedin">
+                    <h3 class="animar-derecha">Erick Gutierrez Hernandez</h3>
                 </div>
             </div>
-            <div class="contacto-mensaje">
+            <div class="contacto-mensaje ">
                 <h3>01001110  01101111  00100000  01110011  01100101  00100000  01110001  01110101  01100101  00100000  01110000  01101111  01101110  01100101  01110010  00100000  01100001  01110001  01110101  11101101  00101110  </h3>
-
             </div>
         </div>
     </main>
@@ -123,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const posicionElemento = elemento.getBoundingClientRect().top;
             const alturaPantalla = window.innerHeight;
 
-            if (posicionElemento <= alturaPantalla - 50) {
+            if (posicionElemento <= alturaPantalla ) {
                 elemento.classList.add('activa');
             }
         });
