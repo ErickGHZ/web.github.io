@@ -91,6 +91,10 @@ header {
     padding: 0;
     font-size: 1.1.8em;   
 }
+.proyectos, .inicio, .contacto {
+    overflow: hidden;
+}
+
 .inicio {
     display: flex;
     flex-direction: column;
@@ -209,8 +213,8 @@ header {
     color: #fff;
     padding-left: 5%;
     padding-right: 5%;
-
 }
+
 
 
 
