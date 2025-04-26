@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario de Ingresos</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0px;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 10px;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    #titleAndControls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+    select {
+      padding: 8px 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    #settings {
+      position: relative;
+    }
+    #settingsButton {
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      background: #fff;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      transition: all 0.2s;
+    }
+    #settingsButton:hover {
+      background: #f5f5f5;
+    }
+    #settingsMenu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 10;
+      overflow: hidden;
+      width: 200px;
+    }
+    #settingsMenu button, #settingsMenu label {
+      display: block;
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      background: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+    #settingsMenu button:hover, #settingsMenu label:hover {
+      background: #f7f7f7;
+    }
+    #fileInput {
+      display: none;
+    }
+    #currentMonthYear {
+      text-align: center;
+      margin: 15px 0;
+      font-size: 20px;
+      color: #333;
+    }
+    #calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 5px;
+      box-sizing: border-box;
+    }
+    .day {
+      background: white;
+      border: 1px solid #e0e0e0;
+      min-height: 110px;
+      height: 110px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .day:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    }
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+      background: #f5f7fa;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .day-number {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .day-total {
+      font-size: 14px;
+      font-weight: bold;
+      color: #4a6fa5;
+    }
+    .day-content {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 3px;
+    }
+    .income {
+      font-size: 12px;
+      margin-top: 3px;
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .today {
+      background: white !important;
+      border: 2px solid #4a6fa5;
+    }
+    .today .day-header {
+      background: #4a6fa5;
+      color: white;
+    }
+    .today .day-total {
+      color: white;
+    }
+    .today .income-entry {
+      background: rgba(74, 111, 165, 0.1);
+    }
+    #incomeModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    #incomeModalContent {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 350px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    #modalTitle {
+      margin-top: 0;
+      margin-bottom: 5px;
+      color: #333;
+      text-align: center;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .button-group button {
+      flex: 1;
+      padding: 10px 0;
+      font-size: 15px;
+      background: #f5f7fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .button-group button:hover {
+      background: #ebeef2;
+    }
+    .button-group button.active {
+      background: #4a6fa5;
+      color: white;
+      font-weight: bold;
+      border-color: #3a5a85;
+    }
+    .modal-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .modal-buttons button {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .modal-buttons button:first-child {
+      background: #4a6fa5;
+      color: white;
+    }
+    .modal-buttons button:first-child:hover {
+      background: #3a5a85;
+    }
+    .modal-buttons button:last-child {
+      background: #e2e6eb;
+      color: #333;
+    }
+    .modal-buttons button:last-child:hover {
+      background: #d2d7dd;
+    }
+    .income-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin: 3px 0;
+      width: 100%;
+      padding: 6px 8px;
+      border-radius: 6px;
+      background: #f5f7fa;
+      box-sizing: border-box;
+    }
+    .income-entry span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .income-entry button {
+      background: none;
+      border: none;
+      color: #9e9e9e;
+      cursor: pointer;
+      font-size: 10px;
+      transition: color 0.2s;
+      padding: 0 5px;
+    }
+    .income-entry button:hover {
+      color: #f44336;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-sizing: border-box;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+      margin-top: 8px;
+      text-align: center;
+    }
+    strong {
+      font-size: 16px;
+    }
+    /* Estilo compacto para el resumen mensual */
+    .month-summary {
+      margin: 0;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .summary-item {
+      background: #f5f7fa;
+      border-radius: 5px;
+      padding: 5px 8px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+    .summary-label {
+      color: #555;
+      margin-right: 5px;
+    }
+    .summary-value {
+      font-weight: bold;
+      color: #4a6fa5;
+    }
+    .summary-total {
+      background: #e8f0f9;
+    }
+    /* Colores minimalistas para los días */
+    .day-empty {
+      background: white;
+    }
+    .day-low {
+      background: white;
+      border-left: 4px solid #ffca99;
+    }
+    .day-medium {
+      background: white;
+      border-left: 4px solid #91c4f8;
+    }
+    .day-high {
+      background: white;
+      border-left: 4px solid #c2e0c2;
+    }
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <div id="titleAndControls">
+    <h1>Ingresos</h1>
+    <select id="monthSelect"></select>
+    <select id="yearSelect"></select>
+    <!-- Resumen del mes compacto en línea -->
+    <div class="month-summary">
+      <div class="summary-item">
+        <span class="summary-label">Recargas:</span>
+        <span class="summary-value" id="totalRecargas">$0</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Transferencias:</span>
+        <span class="summary-value" id="totalTransferencias">$0</span>
+      </div>
+      <div class="summary-item summary-total">
+        <span class="summary-label">Total:</span>
+        <span class="summary-value" id="totalMes">$0</span>
+      </div>
+    </div>
+  </div>
+  
+  <h2 id="currentMonthYear"></h2>
+
+
+  <div id="settings">
+    <button id="settingsButton" onclick="toggleSettings()">⚙️ Opciones</button>
+    <div id="settingsMenu">
+      <button onclick="downloadJSON()">📥 Descargar Ingresos</button>
+      <label for="fileInput">📤 Importar Ingresos</label>
+      <input type="file" id="fileInput" accept=".json" onchange="importJSON(this)">
+      <button onclick="clearAll()">🗑️ Borrar Todo</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="calendar"></div>
+
+<div id="incomeModal">
+  <div id="incomeModalContent">
+    <h3 id="modalTitle">Agregar Ingreso</h3>
+    <div>
+      <strong>Tipo de Ingreso:</strong>
+      <div class="button-group" id="typeButtons">
+        <button type="button" onclick="selectType('Recarga')">Recarga</button>
+        <button type="button" onclick="selectType('Trans')">Transferencia</button>
+      </div>
+    </div>
+    <div>
+      <strong>Monto:</strong>
+      <input type="number" id="incomeAmount" placeholder="Ingrese el monto" value="50">
+      <div class="button-group">
+        <button type="button" onclick="addAmount(50)">+50</button>
+        <button type="button" onclick="addAmount(100)">+100</button>
+        <button type="button" onclick="addAmount(200)">+200</button>
+      </div>
+    </div>
+    <div class="modal-buttons">
+      <button onclick="saveIncome()">Guardar</button>
+      <button onclick="closeModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const calendar = document.getElementById('calendar');
+  const yearSelect = document.getElementById('yearSelect');
+  const monthSelect = document.getElementById('monthSelect');
+  const currentMonthYear = document.getElementById('currentMonthYear');
+  const incomeModal = document.getElementById('incomeModal');
+  const incomeAmountInput = document.getElementById('incomeAmount');
+  const settingsMenu = document.getElementById('settingsMenu');
+  const totalRecargasEl = document.getElementById('totalRecargas');
+  const totalTransferenciasEl = document.getElementById('totalTransferencias');
+  const totalMesEl = document.getElementById('totalMes');
+  
+  let selectedDate = null;
+  let selectedType = 'Recarga'; // Default to Recarga
+
+  const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+  let incomes = JSON.parse(localStorage.getItem('incomes')) || {};
+
+  function setupSelectors() {
+    for (let y = 2025; y <= 2028; y++) {
+      const option = document.createElement('option');
+      option.value = y;
+      option.textContent = y;
+      yearSelect.appendChild(option);
+    }
+    months.forEach((month, index) => {
+      const option = document.createElement('option');
+      option.value = index;
+      option.textContent = month;
+      monthSelect.appendChild(option);
+    });
+    const now = new Date();
+    yearSelect.value = now.getFullYear();
+    monthSelect.value = now.getMonth();
+  }
+
+  function generateCalendar() {
+    const year = parseInt(yearSelect.value);
+    const month = parseInt(monthSelect.value);
+    currentMonthYear.textContent = `${months[month]} ${year}`;
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const today = new Date();
+
+    calendar.innerHTML = '';
+
+    const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+    for (let i = 0; i < 7; i++) {
+      const dayNameCell = document.createElement('div');
+      dayNameCell.style.textAlign = 'center';
+      dayNameCell.style.fontWeight = 'bold';
+      dayNameCell.style.padding = '5px';
+      dayNameCell.textContent = dayNames[i];
+      calendar.appendChild(dayNameCell);
+    }
+
+    for (let i = 0; i < firstDay; i++) {
+      const emptyCell = document.createElement('div');
+      calendar.appendChild(emptyCell);
+    }
+
+    // Prepare totals for month summary
+    let monthTotalRecargas = 0;
+    let monthTotalTransferencias = 0;
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const dayDiv = document.createElement('div');
+      dayDiv.className = 'day';
+
+      // Creamos un encabezado para el día
+      const dayHeader = document.createElement('div');
+      dayHeader.className = 'day-header';
+      
+      const dayNumber = document.createElement('div');
+      dayNumber.className = 'day-number';
+      dayNumber.textContent = day;
+      
+      const dayTotal = document.createElement('div');
+      dayTotal.className = 'day-total';
+      
+      dayHeader.appendChild(dayNumber);
+      dayHeader.appendChild(dayTotal);
+      dayDiv.appendChild(dayHeader);
+
+      // Contenido del día
+      const dayContent = document.createElement('div');
+      dayContent.className = 'day-content';
+      dayDiv.appendChild(dayContent);
+
+      const key = `${year}-${month + 1}-${day}`;
+      let total = 0;
+      let dayRecargas = 0;
+      let dayTransferencias = 0;
+      
+      if (incomes[key]) {
+        incomes[key].forEach((entry, index) => {
+          const incomeDiv = document.createElement('div');
+          incomeDiv.className = 'income-entry';
+          
+          // Mostrar el tipo completo en el tooltip pero mostrar "Trans" para transferencias
+          const displayType = entry.type === 'Trans' ? 'Trans' : entry.type;
+          const fullType = entry.type === 'Trans' ? 'Transferencia' : entry.type;
+          
+          incomeDiv.innerHTML = `<span title="${fullType}">${displayType}: $${entry.amount}</span> <button onclick="deleteEntry('${key}', ${index}, event)">✖️</button>`;
+          dayContent.appendChild(incomeDiv);
+          
+          total += entry.amount;
+          
+          if (entry.type === 'Recarga') {
+            dayRecargas += entry.amount;
+            monthTotalRecargas += entry.amount;
+          } else if (entry.type === 'Trans') {
+            dayTransferencias += entry.amount;
+            monthTotalTransferencias += entry.amount;
+          }
+        });
+      }
+
+      // Mostrar el total en el encabezado si hay ingresos
+      if (total > 0) {
+        dayTotal.textContent = `$${total}`;
+      }
+
+      if (today.getFullYear() === year && today.getMonth() === month && today.getDate() === day) {
+        dayDiv.classList.add('today');
+      } else {
+        // Nuevos colores minimalistas
+        if (total === 0) {
+          dayDiv.classList.add('day-empty');
+        } else if (total < 100) {
+          dayDiv.classList.add('day-low');
+        } else if (total >= 100 && total < 200) {
+          dayDiv.classList.add('day-medium');
+        } else if (total >= 200) {
+          dayDiv.classList.add('day-high');
+        }
+      }
+
+      dayDiv.onclick = () => openModal(key, day);
+      calendar.appendChild(dayDiv);
+    }
+    
+    // Update month summary
+    const monthTotal = monthTotalRecargas + monthTotalTransferencias;
+    totalRecargasEl.textContent = `$${monthTotalRecargas}`;
+    totalTransferenciasEl.textContent = `$${monthTotalTransferencias}`;
+    totalMesEl.textContent = `$${monthTotal}`;
+  }
+
+  function openModal(dateKey, day) {
+    selectedDate = dateKey;
+    incomeModal.style.display = 'flex';
+    document.getElementById('modalTitle').textContent = `Día ${day}`;
+    incomeAmountInput.value = "50"; // Default value
+    
+    // Select Recarga by default
+    selectType('Recarga');
+    
+    // Enfoque en el campo de monto
+    setTimeout(() => {
+      incomeAmountInput.focus();
+    }, 100);
+  }
+
+  function closeModal() {
+    incomeModal.style.display = 'none';
+  }
+
+  function selectType(type) {
+    selectedType = type;
+    document.querySelectorAll('#typeButtons button').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`#typeButtons button:nth-child(${type === 'Recarga' ? 1 : 2})`).classList.add('active');
+  }
+
+  function addAmount(amount) {
+    let currentAmount = parseFloat(incomeAmountInput.value) || 0;
+    incomeAmountInput.value = currentAmount + amount;
+  }
+
+  function saveIncome() {
+    if (!selectedType || !incomeAmountInput.value) {
+      alert('Selecciona tipo y monto');
+      return;
+    }
+    const amount = parseFloat(incomeAmountInput.value);
+
+    // Check if entry of same type already exists for the day
+    let existingIndex = -1;
+    if (incomes[selectedDate]) {
+      existingIndex = incomes[selectedDate].findIndex(entry => entry.type === selectedType);
+    } else {
+      incomes[selectedDate] = [];
+    }
+
+    // If same type exists, update amount instead of creating new entry
+    if (existingIndex >= 0) {
+      incomes[selectedDate][existingIndex].amount += amount;
+    } else {
+      incomes[selectedDate].push({ type: selectedType, amount });
+    }
+
+    localStorage.setItem('incomes', JSON.stringify(incomes));
+    closeModal();
+    generateCalendar();
+  }
+
+  function deleteEntry(dateKey, index, event) {
+    // Evitar la propagación del evento para que no abra el modal
+    event.stopPropagation();
+    
+    if (confirm('¿Eliminar este ingreso?')) {
+      incomes[dateKey].splice(index, 1);
+      if (incomes[dateKey].length === 0) {
+        delete incomes[dateKey];
+      }
+      localStorage.setItem('incomes', JSON.stringify(incomes));
+      generateCalendar();
+    }
+  }
+
+  function downloadJSON() {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(incomes, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "ingresos.json");
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
+
+  function importJSON(input) {
+    const file = input.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        const importedData = JSON.parse(e.target.result);
+        if (confirm('¿Reemplazar todos los datos actuales con los importados?')) {
+          incomes = importedData;
+          localStorage.setItem('incomes', JSON.stringify(incomes));
+          generateCalendar();
+          alert('Datos importados correctamente');
+        }
+      } catch (error) {
+        alert('Error al importar el archivo: ' + error.message);
+      }
+      input.value = ''; // Reset input
+    };
+    reader.readAsText(file);
+  }
+
+  function clearAll() {
+    if (confirm('¿Seguro que quieres borrar todos los ingresos?')) {
+      localStorage.removeItem('incomes');
+      incomes = {};
+      generateCalendar();
+    }
+  }
+
+  function toggleSettings() {
+    settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
+    // Close menu when clicking outside
+    if (settingsMenu.style.display === 'block') {
+      document.addEventListener('click', closeSettingsOnClickOutside);
+    } else {
+      document.removeEventListener('click', closeSettingsOnClickOutside);
+    }
+  }
+
+  function closeSettingsOnClickOutside(event) {
+    if (!settingsMenu.contains(event.target) && event.target !== document.getElementById('settingsButton')) {
+      settingsMenu.style.display = 'none';
+      document.removeEventListener('click', closeSettingsOnClickOutside);
+    }
+  }
+
+  // Función para manejar teclas (Enter y Escape)
+  function handleKeyPress(event) {
+    if (incomeModal.style.display === 'flex') {
+      if (event.key === 'Enter') {
+        saveIncome();
+      } else if (event.key === 'Escape') {
+        closeModal();
+      }
+    }
+  }
+
+  // Initialize app
+  setupSelectors();
+  generateCalendar();
+
+  // Pre-select Recarga button
+  selectType('Recarga');
+
+  yearSelect.addEventListener('change', generateCalendar);
+  monthSelect.addEventListener('change', generateCalendar);
+  
+  // Manejar teclas para guardar con Enter y cerrar con Escape
+  document.addEventListener('keydown', handleKeyPress);
+</script>
+
+</body>
+</html>
