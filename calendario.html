@@ -727,7 +727,7 @@
 </script>
 <script>
   // Sistema de contraseña
-let appConfig = JSON.parse(localStorage.getItem('appConfig')) ;
+let appConfig = JSON.parse(localStorage.getItem('appConfig')) || { password: "1407" };
 
 // Guarda la contraseña junto con los datos
 function saveAppConfig() {
