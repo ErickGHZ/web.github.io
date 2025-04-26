@@ -336,6 +336,17 @@
   </style>
 </head>
 <body>
+  <div id="passwordScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8f9fa; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000;">
+    <h2>Calendario de Ingresos</h2>
+    <div style="margin: 20px 0; font-size: 16px;">Ingresa tu contraseña para continuar</div>
+    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+      <input type="password" id="passwordDigit1" maxlength="1" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border-radius: 8px; border: 1px solid #e0e0e0;">
+      <input type="password" id="passwordDigit2" maxlength="1" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border-radius: 8px; border: 1px solid #e0e0e0;">
+      <input type="password" id="passwordDigit3" maxlength="1" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border-radius: 8px; border: 1px solid #e0e0e0;">
+      <input type="password" id="passwordDigit4" maxlength="1" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border-radius: 8px; border: 1px solid #e0e0e0;">
+    </div>
+    <div id="passwordError" style="color: #f44336; margin-top: 10px; display: none;">Contraseña incorrecta. Intenta nuevamente.</div>
+  </div>
 
 <div id="header">
   <div id="titleAndControls">
@@ -658,12 +669,20 @@
   }
 
   function clearAll() {
-    if (confirm('¿Seguro que quieres borrar todos los ingresos?')) {
-      localStorage.removeItem('incomes');
-      incomes = {};
-      generateCalendar();
+  if (confirm('¿Seguro que quieres borrar todos los ingresos?')) {
+    const resetPassword = confirm('¿Deseas también resetear la contraseña a 1407?');
+    
+    localStorage.removeItem('incomes');
+    incomes = {};
+    
+    if (resetPassword) {
+      appConfig.password = "1407";
+      saveAppConfig();
     }
+    
+    generateCalendar();
   }
+}
 
   function toggleSettings() {
     settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
@@ -705,6 +724,161 @@
   
   // Manejar teclas para guardar con Enter y cerrar con Escape
   document.addEventListener('keydown', handleKeyPress);
+</script>
+<script>
+  // Sistema de contraseña
+let appConfig = JSON.parse(localStorage.getItem('appConfig')) || { password: "1407" };
+
+// Guarda la contraseña junto con los datos
+function saveAppConfig() {
+  localStorage.setItem('appConfig', JSON.stringify(appConfig));
+}
+
+// Funcionalidad para pantalla de contraseña
+const passwordScreen = document.getElementById('passwordScreen');
+const passwordError = document.getElementById('passwordError');
+const passwordInputs = [
+  document.getElementById('passwordDigit1'),
+  document.getElementById('passwordDigit2'),
+  document.getElementById('passwordDigit3'),
+  document.getElementById('passwordDigit4')
+];
+
+// Auto-focus al siguiente input
+passwordInputs.forEach((input, index) => {
+  input.addEventListener('input', function() {
+    if (this.value.length === this.maxLength) {
+      if (index < passwordInputs.length - 1) {
+        passwordInputs[index + 1].focus();
+      } else {
+        // Verificar contraseña cuando se llena el último dígito
+        verifyPassword();
+      }
+    }
+  });
+
+  // Permitir solo números
+  input.addEventListener('keypress', function(e) {
+    if (isNaN(e.key) || e.key === ' ') {
+      e.preventDefault();
+    }
+  });
+
+  // Retroceder al input anterior con backspace
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Backspace' && this.value.length === 0 && index > 0) {
+      passwordInputs[index - 1].focus();
+    }
+  });
+});
+
+// Verificar contraseña
+function verifyPassword() {
+  const enteredPassword = passwordInputs.map(input => input.value).join('');
+  
+  if (enteredPassword === appConfig.password) {
+    // Contraseña correcta - mostrar aplicación
+    passwordScreen.style.display = 'none';
+    passwordError.style.display = 'none';
+  } else {
+    // Contraseña incorrecta - mostrar error y limpiar
+    passwordError.style.display = 'block';
+    passwordInputs.forEach(input => {
+      input.value = '';
+    });
+    passwordInputs[0].focus();
+  }
+}
+
+// Enfocar el primer input al cargar
+window.addEventListener('DOMContentLoaded', () => {
+  passwordInputs[0].focus();
+});
+
+// Incluir password en exportación/importación de datos
+function downloadJSON() {
+  // Crear objeto con datos y configuración
+  const exportData = {
+    config: appConfig,
+    incomes: incomes
+  };
+  
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+  const downloadAnchorNode = document.createElement('a');
+  downloadAnchorNode.setAttribute("href", dataStr);
+  downloadAnchorNode.setAttribute("download", "ingresos.json");
+  document.body.appendChild(downloadAnchorNode);
+  downloadAnchorNode.click();
+  downloadAnchorNode.remove();
+}
+
+// Actualizar función de importación para manejar el nuevo formato
+function importJSON(input) {
+  const file = input.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const importedData = JSON.parse(e.target.result);
+      
+      if (importedData.config && importedData.incomes) {
+        // Nuevo formato con config e incomes
+        if (confirm('¿Reemplazar todos los datos actuales con los importados?')) {
+          appConfig = importedData.config;
+          incomes = importedData.incomes;
+          saveAppConfig();
+          localStorage.setItem('incomes', JSON.stringify(incomes));
+          generateCalendar();
+          alert('Datos importados correctamente');
+        }
+      } else {
+        // Formato antiguo (solo incomes)
+        if (confirm('¿Reemplazar todos los datos actuales de ingresos con los importados?')) {
+          incomes = importedData;
+          localStorage.setItem('incomes', JSON.stringify(incomes));
+          generateCalendar();
+          alert('Datos de ingresos importados correctamente');
+        }
+      }
+    } catch (error) {
+      alert('Error al importar el archivo: ' + error.message);
+    }
+    input.value = ''; // Reset input
+  };
+  reader.readAsText(file);
+}
+
+// Añadir opción para cambiar contraseña en el menú de configuración
+function setupSettingsMenu() {
+  const changePasswordBtn = document.createElement('button');
+  changePasswordBtn.textContent = '🔑 Cambiar Contraseña';
+  changePasswordBtn.onclick = changePassword;
+  settingsMenu.insertBefore(changePasswordBtn, document.querySelector('#settingsMenu button:last-child'));
+}
+
+// Función para cambiar contraseña
+function changePassword() {
+  const currentPass = prompt("Ingresa tu contraseña actual:");
+  if (currentPass !== appConfig.password) {
+    alert("Contraseña incorrecta");
+    return;
+  }
+  
+  const newPass = prompt("Ingresa tu nueva contraseña (4 dígitos):");
+  if (!newPass || newPass.length !== 4 || isNaN(newPass)) {
+    alert("La contraseña debe ser de 4 dígitos numéricos");
+    return;
+  }
+  
+  appConfig.password = newPass;
+  saveAppConfig();
+  alert("Contraseña actualizada correctamente");
+  settingsMenu.style.display = 'none';
+}
+
+// Inicializar menú de configuración
+setupSettingsMenu();
 </script>
 
 </body>
